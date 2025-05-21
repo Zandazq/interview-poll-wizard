@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Header from "@/components/Layout/Header";
@@ -73,9 +72,13 @@ const PollDetail = () => {
     setActiveTab("results");
   };
   
+  const viewDetailedResults = () => {
+    navigate("/results");
+  };
+  
   return (
     <div className="wechat-container">
-      <Header title={poll.title} showBack />
+      <Header title={poll?.title || ""} showBack />
       
       <Tabs
         value={activeTab}
@@ -240,6 +243,15 @@ const PollDetail = () => {
         
         <TabsContent value="results">
           <SalaryResults pollId={pollId || ""} />
+          
+          <div className="p-4 flex justify-center">
+            <Button 
+              onClick={viewDetailedResults}
+              className="wechat-btn-primary"
+            >
+              查看详细结果分析
+            </Button>
+          </div>
         </TabsContent>
       </Tabs>
     </div>

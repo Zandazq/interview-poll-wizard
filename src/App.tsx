@@ -10,6 +10,7 @@ import PollsPage from "./pages/PollsPage";
 import PollDetail from "./pages/PollDetail";
 import CreatePollPage from "./pages/CreatePollPage";
 import ProfilePage from "./pages/ProfilePage";
+import SurveyResultsPage from "./pages/SurveyResultsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/poll/:pollId" element={<PollDetail />} />
           <Route path="/create" element={<CreatePollPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/results" element={<SurveyResultsPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -7,6 +7,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { industries } from "@/data/mockData";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface SalaryResultsProps {
   pollId: string;
@@ -16,6 +18,7 @@ const CHART_COLORS = ["#07C160", "#10D56A", "#36E980", "#74F5AE", "#A9F5D0", "#C
 
 const SalaryResults: React.FC<SalaryResultsProps> = ({ pollId }) => {
   const [filter, setFilter] = useState<PollFilter>({});
+  const navigate = useNavigate();
   
   // Find the poll data
   const poll = mockPolls.find((p) => p.id === pollId) || mockPolls[0];
@@ -178,6 +181,15 @@ const SalaryResults: React.FC<SalaryResultsProps> = ({ pollId }) => {
             </div>
           ))}
         </div>
+      </div>
+      
+      <div className="mt-6">
+        <Button 
+          onClick={() => navigate("/poll-form")} 
+          className="wechat-btn-primary"
+        >
+          参与此调查
+        </Button>
       </div>
     </div>
   );

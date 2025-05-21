@@ -99,5 +99,29 @@
   .wechat-icon-badge {
     @apply flex items-center justify-center w-8 h-8 rounded-full bg-wechat-green bg-opacity-10 text-wechat-green text-lg;
   }
-}
 
+  /* New styles for the poll form */
+  .wechat-radio-item {
+    @apply relative flex items-center justify-between p-3 rounded-lg transition-colors;
+  }
+  
+  .wechat-radio-item-selected {
+    @apply bg-wechat-green bg-opacity-10;
+  }
+  
+  .wechat-checkbox-icon {
+    @apply flex items-center justify-center w-6 h-6 rounded-full border border-gray-300;
+  }
+  
+  .wechat-checkbox-selected {
+    @apply bg-wechat-green border-wechat-green text-white;
+  }
+  
+  .wechat-form-section {
+    @apply bg-white rounded-lg p-4 mb-4 shadow-sm;
+  }
+  
+  .wechat-form-title {
+    @apply text-lg font-medium mb-3 text-wechat-darkGray;
+  }
+}

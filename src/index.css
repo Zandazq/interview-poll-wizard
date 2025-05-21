@@ -102,7 +102,7 @@
 
   /* New styles for the poll form */
   .wechat-radio-item {
-    @apply relative flex items-center justify-between p-3 rounded-lg transition-colors;
+    @apply relative flex items-center p-3 rounded-lg transition-colors hover:bg-gray-50 cursor-pointer;
   }
   
   .wechat-radio-item-selected {
@@ -110,7 +110,7 @@
   }
   
   .wechat-checkbox-icon {
-    @apply flex items-center justify-center w-6 h-6 rounded-full border border-gray-300;
+    @apply flex items-center justify-center w-5 h-5 rounded-full border border-gray-300;
   }
   
   .wechat-checkbox-selected {

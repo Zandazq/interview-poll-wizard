@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 
 const PollFormPage: React.FC = () => {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const PollFormPage: React.FC = () => {
   return (
     <div className="wechat-container bg-[#F6F6F6]">
       <Header 
-        title="看看你的竞争力有多强" 
+        title="让我们一起了解行业现状" 
         showBack={true}
       />
       
@@ -98,41 +98,27 @@ const PollFormPage: React.FC = () => {
           {/* Monthly Interviews Section */}
           <div className="bg-white rounded-lg p-4">
             <h3 className="text-base font-medium mb-4">一个月平均面试几家</h3>
-            <RadioGroup 
-              value={formData.interviews} 
-              onValueChange={(value) => handleChange("interviews", value)}
-              className="space-y-2"
-            >
-              <div className="flex items-center justify-between p-2">
-                <Label htmlFor="0-5" className="text-base text-wechat-darkGray">0-5</Label>
-                <RadioGroupItem value="0-5" id="0-5" />
-              </div>
-              
-              <div className="flex items-center justify-between p-2">
-                <Label htmlFor="6-10" className="text-base text-wechat-darkGray">6-10</Label>
-                <RadioGroupItem value="6-10" id="6-10" />
-              </div>
-              
-              <div className="flex items-center justify-between p-2">
-                <Label htmlFor="11-15" className="text-base text-wechat-darkGray">11-15</Label>
-                <RadioGroupItem value="11-15" id="11-15" />
-              </div>
-              
-              <div className="flex items-center justify-between p-2">
-                <Label htmlFor="16-20" className="text-base text-wechat-darkGray">16-20</Label>
-                <RadioGroupItem value="16-20" id="16-20" />
-              </div>
-              
-              <div className="flex items-center justify-between p-2">
-                <Label htmlFor="21plus" className="text-base text-wechat-darkGray">21家以上</Label>
-                <RadioGroupItem value="21plus" id="21plus" />
-              </div>
-              
-              <div className="flex items-center justify-between p-2">
-                <Label htmlFor="working" className="text-base text-wechat-darkGray">在职</Label>
-                <RadioGroupItem value="在职" id="working" />
-              </div>
-            </RadioGroup>
+            <div className="space-y-3">
+              {[
+                { value: "0-5", label: "0-5", votes: "4696", percentage: "19.73" },
+                { value: "6-10", label: "6-10", votes: "2866", percentage: "12.04" },
+                { value: "11-15", label: "11-15", votes: "3214", percentage: "13.5" },
+                { value: "16-20", label: "16-20", votes: "2129", percentage: "8.95" },
+                { value: "21plus", label: "21家以上", votes: "3180", percentage: "13.36" },
+                { value: "在职", label: "失业中 | 处于休息模式", votes: "7716", percentage: "32.42" }
+              ].map((option) => (
+                <div key={option.value} className="wechat-radio-item rounded-lg" onClick={() => handleChange("interviews", option.value)}>
+                  <div className="flex justify-between w-full">
+                    <Label htmlFor={option.value} className="text-wechat-darkGray cursor-pointer">
+                      {option.label}
+                    </Label>
+                    <div className={`wechat-checkbox-icon ${formData.interviews === option.value ? "wechat-checkbox-selected" : ""}`}>
+                      {formData.interviews === option.value && <Check className="h-3 w-3" />}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           
           {/* Salary Section */}
@@ -168,42 +154,68 @@ const PollFormPage: React.FC = () => {
           
           {/* Career Plans Section */}
           <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">转行想法</h3>
-            <RadioGroup 
-              value={formData.careerPlan} 
-              onValueChange={(value) => handleChange("careerPlan", value)}
-              className="space-y-2"
-            >
-              <div className="flex items-center justify-between p-2">
-                <Label htmlFor="wantChange" className="text-base text-wechat-darkGray">想要转行</Label>
-                <RadioGroupItem value="想要转行" id="wantChange" />
-              </div>
-              
-              <div className="flex items-center justify-between p-2">
-                <Label htmlFor="stayForNow" className="text-base text-wechat-darkGray">暂时忍着</Label>
-                <RadioGroupItem value="暂时忍着" id="stayForNow" />
-              </div>
-            </RadioGroup>
+            <h3 className="text-base font-medium mb-4">再来一次，还会选择做程序员吗?</h3>
+            <div className="space-y-3">
+              {[
+                { value: "当然会", label: "当然会，代码比人心好懂", votes: "13038", percentage: "54.78" },
+                { value: "不会", label: "不会，该给年轻人让路了", votes: "10762", percentage: "45.22" }
+              ].map((option) => (
+                <div key={option.value} className="wechat-radio-item" onClick={() => handleChange("careerPlan", option.value)}>
+                  <div className="flex flex-col w-full">
+                    <div className="flex justify-between w-full mb-2">
+                      <Label htmlFor={option.value} className="text-wechat-darkGray cursor-pointer">
+                        {option.label}
+                      </Label>
+                      <div className="flex items-center">
+                        <span className="text-gray-500 mr-2">{option.votes}票</span>
+                        <span className="text-wechat-green">{option.percentage}%</span>
+                      </div>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-wechat-green h-2 rounded-full" 
+                        style={{ width: `${option.percentage}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           
-          {/* Regret Section */}
+          {/* Current Salary Section */}
           <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">后悔吗</h3>
-            <RadioGroup 
-              value={formData.regret} 
-              onValueChange={(value) => handleChange("regret", value)}
-              className="space-y-2"
-            >
-              <div className="flex items-center justify-between p-2">
-                <Label htmlFor="regret" className="text-base text-wechat-darkGray">后悔</Label>
-                <RadioGroupItem value="后悔" id="regret" />
-              </div>
-              
-              <div className="flex items-center justify-between p-2">
-                <Label htmlFor="noRegret" className="text-base text-wechat-darkGray">不后悔</Label>
-                <RadioGroupItem value="不后悔" id="noRegret" />
-              </div>
-            </RadioGroup>
+            <h3 className="text-base font-medium mb-4">当前薪资 (投票后，可查看其他人答案)</h3>
+            <div className="space-y-3">
+              {[
+                { value: "8K-15K", label: "8K-15K | 白银级", votes: "4696", percentage: "19.73" },
+                { value: "16K-20K", label: "16K-20K | 黄金级", votes: "2866", percentage: "12.04" },
+                { value: "21K-28K", label: "21K-28K | 铂金级", votes: "3214", percentage: "13.5" },
+                { value: "29K-39K", label: "29K-39K | 钻石级", votes: "2129", percentage: "8.95" },
+                { value: "40K+", label: "40K以上 | 王者级", votes: "3180", percentage: "13.36" },
+                { value: "失业中", label: "失业中 | 处于休息模式", votes: "7716", percentage: "32.42" }
+              ].map((option) => (
+                <div key={option.value} className="wechat-radio-item" onClick={() => handleChange("workingStatus", option.value)}>
+                  <div className="flex flex-col w-full">
+                    <div className="flex justify-between w-full mb-2">
+                      <Label htmlFor={option.value} className="text-wechat-darkGray cursor-pointer">
+                        {option.label}
+                      </Label>
+                      <div className="flex items-center">
+                        <span className="text-gray-500 mr-2">{option.votes}票</span>
+                        <span className="text-wechat-green">{option.percentage}%</span>
+                      </div>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-wechat-green h-2 rounded-full" 
+                        style={{ width: `${option.percentage}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           
           <Button

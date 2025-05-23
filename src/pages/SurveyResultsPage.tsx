@@ -14,6 +14,7 @@ const SurveyResultsPage = () => {
     { text: "你的学历打败 30%的人", icon: "🎓", highlight: "30%" },
     { text: "你的当前薪资/上份薪资打败30%的人", icon: "💰", highlight: "30%" },
     { text: "同等经验同等学历期望薪资平均25K", icon: "📊", highlight: "25K" },
+    { text: "同等年龄平均薪资28K", icon: "👥", highlight: "28K" },
   ];
   
   const interviewData = [

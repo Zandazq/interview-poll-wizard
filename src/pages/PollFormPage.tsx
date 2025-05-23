@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Layout/Header";
@@ -12,6 +11,7 @@ const PollFormPage: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     workExperience: "",
+    age: "",
     city: "",
     education: "",
     position: "",
@@ -57,6 +57,18 @@ const PollFormPage: React.FC = () => {
                   value={formData.workExperience}
                   onChange={(e) => handleChange("workExperience", e.target.value)}
                   className="wechat-input mt-1"
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="age" className="text-wechat-darkGray">年龄</Label>
+                <Input
+                  id="age"
+                  placeholder="请输入年龄"
+                  value={formData.age}
+                  onChange={(e) => handleChange("age", e.target.value)}
+                  className="wechat-input mt-1"
+                  type="number"
                 />
               </div>
               

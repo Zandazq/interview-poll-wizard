@@ -47,6 +47,31 @@ const PollFormPage: React.FC = () => {
         </div>
         
         <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Data Visibility Section - moved to top */}
+          <div className="bg-white rounded-lg p-4">
+            <h3 className="text-base font-medium mb-4">数据可见度</h3>
+            <div className="space-y-3">
+              {[
+                { value: "private", label: "仅自己可见", description: "只有您可以查看提交的数据" },
+                { value: "public", label: "公开", description: "数据将匿名展示在结果统计中" }
+              ].map((option) => (
+                <div key={option.value} className="wechat-radio-item rounded-lg" onClick={() => handleChange("dataVisibility", option.value)}>
+                  <div className="flex justify-between w-full">
+                    <div className="flex flex-col">
+                      <Label htmlFor={option.value} className="text-wechat-darkGray cursor-pointer font-medium">
+                        {option.label}
+                      </Label>
+                      <span className="text-sm text-wechat-mediumGray mt-1">{option.description}</span>
+                    </div>
+                    <div className={`wechat-checkbox-icon ${formData.dataVisibility === option.value ? "wechat-checkbox-selected" : ""}`}>
+                      {formData.dataVisibility === option.value && <Check className="h-3 w-3" />}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Input Fields Section */}
           <div className="bg-white rounded-lg p-4 space-y-4">
             <div className="space-y-3">
@@ -105,31 +130,6 @@ const PollFormPage: React.FC = () => {
                   className="wechat-input mt-1"
                 />
               </div>
-            </div>
-          </div>
-          
-          {/* Data Visibility Section */}
-          <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">数据可见度</h3>
-            <div className="space-y-3">
-              {[
-                { value: "private", label: "仅自己可见", description: "只有您可以查看提交的数据" },
-                { value: "public", label: "公开", description: "数据将匿名展示在结果统计中" }
-              ].map((option) => (
-                <div key={option.value} className="wechat-radio-item rounded-lg" onClick={() => handleChange("dataVisibility", option.value)}>
-                  <div className="flex justify-between w-full">
-                    <div className="flex flex-col">
-                      <Label htmlFor={option.value} className="text-wechat-darkGray cursor-pointer font-medium">
-                        {option.label}
-                      </Label>
-                      <span className="text-sm text-wechat-mediumGray mt-1">{option.description}</span>
-                    </div>
-                    <div className={`wechat-checkbox-icon ${formData.dataVisibility === option.value ? "wechat-checkbox-selected" : ""}`}>
-                      {formData.dataVisibility === option.value && <Check className="h-3 w-3" />}
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
           

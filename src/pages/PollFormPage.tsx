@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Layout/Header";
@@ -204,41 +203,6 @@ const PollFormPage: React.FC = () => {
                 { value: "不会", label: "不会，该给年轻人让路了", votes: "10762", percentage: "45.22" }
               ].map((option) => (
                 <div key={option.value} className="wechat-radio-item" onClick={() => handleChange("careerPlan", option.value)}>
-                  <div className="flex flex-col w-full">
-                    <div className="flex justify-between w-full mb-2">
-                      <Label htmlFor={option.value} className="text-wechat-darkGray cursor-pointer">
-                        {option.label}
-                      </Label>
-                      <div className="flex items-center">
-                        <span className="text-gray-500 mr-2">{option.votes}票</span>
-                        <span className="text-wechat-green">{option.percentage}%</span>
-                      </div>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className="bg-wechat-green h-2 rounded-full" 
-                        style={{ width: `${option.percentage}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Current Salary Section */}
-          <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">当前薪资 (投票后，可查看其他人答案)</h3>
-            <div className="space-y-3">
-              {[
-                { value: "8K-15K", label: "8K-15K | 白银级", votes: "4696", percentage: "19.73" },
-                { value: "16K-20K", label: "16K-20K | 黄金级", votes: "2866", percentage: "12.04" },
-                { value: "21K-28K", label: "21K-28K | 铂金级", votes: "3214", percentage: "13.5" },
-                { value: "29K-39K", label: "29K-39K | 钻石级", votes: "2129", percentage: "8.95" },
-                { value: "40K+", label: "40K以上 | 王者级", votes: "3180", percentage: "13.36" },
-                { value: "失业中", label: "失业中 | 处于休息模式", votes: "7716", percentage: "32.42" }
-              ].map((option) => (
-                <div key={option.value} className="wechat-radio-item" onClick={() => handleChange("workingStatus", option.value)}>
                   <div className="flex flex-col w-full">
                     <div className="flex justify-between w-full mb-2">
                       <Label htmlFor={option.value} className="text-wechat-darkGray cursor-pointer">

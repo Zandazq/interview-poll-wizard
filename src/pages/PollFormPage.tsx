@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Layout/Header";
@@ -6,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import RecentCompletions from "@/components/RecentCompletions";
 
 const PollFormPage: React.FC = () => {
   const navigate = useNavigate();
@@ -45,6 +47,9 @@ const PollFormPage: React.FC = () => {
         <div className="mb-4">
           <p className="text-sm text-wechat-mediumGray">让我们一起了解行业现状</p>
         </div>
+        
+        {/* 添加最近完成者组件 */}
+        <RecentCompletions />
         
         <form onSubmit={handleSubmit} className="space-y-5">
           {/* Data Visibility Section - moved to top */}

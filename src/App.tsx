@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Index from "./pages/Index";
 import PollsPage from "./pages/PollsPage";
-import PollDetail from "./pages/PollDetail";
 import ProfilePage from "./pages/ProfilePage";
 import SurveyResultsPage from "./pages/SurveyResultsPage";
 import SurveyResultsDemoPage from "./pages/SurveyResultsDemoPage";
@@ -24,7 +23,6 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/polls" element={<PollsPage />} />
-          <Route path="/poll/:pollId" element={<PollDetail />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/results" element={<SurveyResultsPage />} />
           <Route path="/results-demo" element={<SurveyResultsDemoPage />} />

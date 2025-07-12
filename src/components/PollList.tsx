@@ -1,6 +1,5 @@
 
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Poll } from "@/types";
 import { mockPolls } from "@/data/mockData";
 import { Button } from "@/components/ui/button";
@@ -13,17 +12,12 @@ interface PollListProps {
 
 const PollList: React.FC<PollListProps> = ({ polls = mockPolls }) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const navigate = useNavigate();
   
   const filteredPolls = polls.filter(
     (poll) =>
       poll.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       poll.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
-  
-  const handleViewPoll = (pollId: string) => {
-    navigate(`/poll/${pollId}`);
-  };
   
   const formatDate = (date: Date) => {
     return date.toLocaleDateString("zh-CN", {
@@ -54,8 +48,7 @@ const PollList: React.FC<PollListProps> = ({ polls = mockPolls }) => {
           {filteredPolls.map((poll) => (
             <div 
               key={poll.id} 
-              className="wechat-card hover:shadow-md transition-shadow" 
-              onClick={() => handleViewPoll(poll.id)}
+              className="wechat-card" 
             >
               <h3 className="text-lg font-medium text-wechat-darkGray mb-2">
                 {poll.title}
@@ -76,22 +69,13 @@ const PollList: React.FC<PollListProps> = ({ polls = mockPolls }) => {
                 </div>
                 <span className="flex items-center text-wechat-green">
                   <Star size={14} className="mr-1" />
-                  查看详情
+                  薪资调查
                 </span>
               </div>
             </div>
           ))}
         </div>
       )}
-      
-      <div className="fixed bottom-6 right-6">
-        <Button
-          onClick={() => navigate("/create")}
-          className="rounded-full w-14 h-14 bg-wechat-green hover:bg-wechat-lightGreen shadow-lg"
-        >
-          <span className="text-2xl">+</span>
-        </Button>
-      </div>
     </div>
   );
 };

@@ -6,7 +6,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import PollsPage from "./pages/PollsPage";
-import ProfilePage from "./pages/ProfilePage";
 import SurveyResultsPage from "./pages/SurveyResultsPage";
 import SurveyResultsDemoPage from "./pages/SurveyResultsDemoPage";
 import PollFormPage from "./pages/PollFormPage";
@@ -21,7 +20,6 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/polls" element={<PollsPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/results" element={<SurveyResultsPage />} />
           <Route path="/results-demo" element={<SurveyResultsDemoPage />} />
           <Route path="/poll-form" element={<PollFormPage />} />

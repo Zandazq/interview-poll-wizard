@@ -13,7 +13,6 @@ import ProfilePage from "./pages/ProfilePage";
 import SurveyResultsPage from "./pages/SurveyResultsPage";
 import SurveyResultsDemoPage from "./pages/SurveyResultsDemoPage";
 import PollFormPage from "./pages/PollFormPage";
-import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -32,7 +31,6 @@ const App = () => (
           <Route path="/results" element={<SurveyResultsPage />} />
           <Route path="/results-demo" element={<SurveyResultsDemoPage />} />
           <Route path="/poll-form" element={<PollFormPage />} />
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

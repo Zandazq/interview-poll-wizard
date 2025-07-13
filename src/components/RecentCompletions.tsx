@@ -25,12 +25,12 @@ const RecentCompletions: React.FC = () => {
         <div className="space-y-2">
           {recentCompletions.map((completion, index) => (
             <div key={index} className="flex items-center justify-between py-2 text-sm">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-3">
                 <span className="text-wechat-darkGray font-medium">
                   {completion.workExperience}
                 </span>
                 <span className="text-wechat-mediumGray">
-                  （{completion.position}）
+                  {completion.position}
                 </span>
               </div>
               <span className="text-wechat-mediumGray text-xs">

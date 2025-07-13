@@ -113,7 +113,7 @@ const PollFormPage: React.FC = () => {
                 <Label htmlFor="city" className="text-wechat-darkGray">城市</Label>
                 <Input
                   id="city"
-                  placeholder="请输入内容"
+                  placeholder="统计同城市同岗位的平均薪资"
                   value={formData.city}
                   onChange={(e) => handleChange("city", e.target.value)}
                   className="wechat-input mt-1"

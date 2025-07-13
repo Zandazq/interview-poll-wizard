@@ -9,6 +9,7 @@ import PollsPage from "./pages/PollsPage";
 import SurveyResultsPage from "./pages/SurveyResultsPage";
 import SurveyResultsDemoPage from "./pages/SurveyResultsDemoPage";
 import PollFormPage from "./pages/PollFormPage";
+import VoteStepOnePage from "./pages/VoteStepOnePage";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<VoteStepOnePage />} />
+          <Route path="/vote-step-one" element={<VoteStepOnePage />} />
           <Route path="/polls" element={<PollsPage />} />
           <Route path="/results" element={<SurveyResultsPage />} />
           <Route path="/results-demo" element={<SurveyResultsDemoPage />} />

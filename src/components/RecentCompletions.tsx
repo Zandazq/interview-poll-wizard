@@ -3,7 +3,7 @@ import React from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface RecentCompletion {
-  name: string;
+  workExperience: string;
   position: string;
   timeAgo: string;
 }
@@ -11,11 +11,11 @@ interface RecentCompletion {
 const RecentCompletions: React.FC = () => {
   // 模拟数据，实际项目中这些数据应该从API获取
   const recentCompletions: RecentCompletion[] = [
-    { name: "张**", position: "产品总监", timeAgo: "2分钟前" },
-    { name: "李**", position: "技术经理", timeAgo: "5分钟前" },
-    { name: "王**", position: "前端工程师", timeAgo: "8分钟前" },
-    { name: "陈**", position: "UI设计师", timeAgo: "12分钟前" },
-    { name: "刘**", position: "后端工程师", timeAgo: "15分钟前" },
+    { workExperience: "5年经验", position: "产品总监", timeAgo: "2分钟前" },
+    { workExperience: "7年经验", position: "技术经理", timeAgo: "5分钟前" },
+    { workExperience: "3年经验", position: "前端工程师", timeAgo: "8分钟前" },
+    { workExperience: "4年经验", position: "UI设计师", timeAgo: "12分钟前" },
+    { workExperience: "6年经验", position: "后端工程师", timeAgo: "15分钟前" },
   ];
 
   return (
@@ -27,7 +27,7 @@ const RecentCompletions: React.FC = () => {
             <div key={index} className="flex items-center justify-between py-2 text-sm">
               <div className="flex items-center space-x-2">
                 <span className="text-wechat-darkGray font-medium">
-                  {completion.name}
+                  {completion.workExperience}
                 </span>
                 <span className="text-wechat-mediumGray">
                   （{completion.position}）

@@ -81,7 +81,10 @@ const SurveyResultsDemoPage = () => {
         </Card>
 
         {/* 个人数据分析 */}
-        <Card className="p-4 space-y-4 border-wechat-gray rounded-xl shadow-sm">
+        <Card className="p-4 space-y-4 border-wechat-gray rounded-xl shadow-sm relative">
+          <div className="absolute top-3 right-3 bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full border border-orange-200">
+            示例数据
+          </div>
           <h3 className="text-lg font-medium text-wechat-green mb-2 text-center">📊 个人数据分析</h3>
           {personalStats.map((stat, index) => (
             <div 
@@ -102,7 +105,10 @@ const SurveyResultsDemoPage = () => {
         </Card>
         
         {/* 面试频率对比 */}
-        <Card className="p-4 border-wechat-gray rounded-xl shadow-sm">
+        <Card className="p-4 border-wechat-gray rounded-xl shadow-sm relative">
+          <div className="absolute top-3 right-3 bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full border border-orange-200">
+            示例数据
+          </div>
           <h3 className="text-lg font-medium mb-4 text-center text-wechat-green">🎯 面试频率对比</h3>
           
           <div className="space-y-3">
@@ -128,7 +134,10 @@ const SurveyResultsDemoPage = () => {
         </Card>
 
         {/* 薪资分布对比 */}
-        <Card className="p-4 border-wechat-gray rounded-xl shadow-sm">
+        <Card className="p-4 border-wechat-gray rounded-xl shadow-sm relative">
+          <div className="absolute top-3 right-3 bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full border border-orange-200">
+            示例数据
+          </div>
           <h3 className="text-lg font-medium mb-4 text-center text-wechat-green">💰 薪资分布对比</h3>
           
           <div className="space-y-3">
@@ -154,7 +163,10 @@ const SurveyResultsDemoPage = () => {
         </Card>
 
         {/* 生活压力分析 */}
-        <Card className="p-4 border-wechat-gray rounded-xl shadow-sm">
+        <Card className="p-4 border-wechat-gray rounded-xl shadow-sm relative">
+          <div className="absolute top-3 right-3 bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full border border-orange-200">
+            示例数据
+          </div>
           <h3 className="text-lg font-medium mb-4 text-center text-wechat-green">🏠 生活压力分析</h3>
           
           <div className="space-y-3">
@@ -180,7 +192,10 @@ const SurveyResultsDemoPage = () => {
         </Card>
         
         {/* 职业选择态度 */}
-        <Card className="p-4 border-wechat-gray rounded-xl shadow-sm">
+        <Card className="p-4 border-wechat-gray rounded-xl shadow-sm relative">
+          <div className="absolute top-3 right-3 bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full border border-orange-200">
+            示例数据
+          </div>
           <h3 className="text-lg font-medium mb-4 text-center text-wechat-green">🤔 职业选择态度</h3>
           
           <div className="space-y-3">

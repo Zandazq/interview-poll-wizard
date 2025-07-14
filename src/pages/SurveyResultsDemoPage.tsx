@@ -57,6 +57,17 @@ const SurveyResultsDemoPage = () => {
         showBack={true}
       />
       
+      {/* 示例数据提示横幅 */}
+      <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-4 mx-4 mt-4 rounded-lg shadow-md">
+        <div className="flex items-center justify-center">
+          <span className="text-2xl mr-2">⚠️</span>
+          <div className="text-center">
+            <div className="text-lg font-bold">这是示例数据展示</div>
+            <div className="text-sm opacity-90">参与真实投票后可查看完整数据分析</div>
+          </div>
+        </div>
+      </div>
+      
       <div className="p-4 space-y-6">
         {/* 说明卡片 */}
         <Card className="p-4 border-wechat-green border-2 bg-green-50">

@@ -207,14 +207,14 @@ const SurveyResultsDemoPage = () => {
           </div>
         </Card>
         
-        <div className="flex justify-center mt-8">
-          <button 
-            onClick={() => navigate("/poll-form")} 
-            className="wechat-btn-primary max-w-xs flex items-center justify-center"
-          >
-            <span className="mr-1">📝</span> 立即参与投票
-          </button>
-        </div>
+        {/* Fixed floating button */}
+        <button 
+          onClick={() => navigate("/poll-form")} 
+          className="fixed bottom-6 right-6 z-50 bg-wechat-green hover:bg-wechat-green/90 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 font-medium animate-pulse"
+        >
+          <span>📝</span>
+          <span>立即参与投票</span>
+        </button>
       </div>
     </div>
   );

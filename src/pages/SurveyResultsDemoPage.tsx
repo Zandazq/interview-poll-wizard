@@ -20,12 +20,12 @@ const SurveyResultsDemoPage = () => {
   ];
   
   const interviewData = [
-    { range: "0-5家", votes: "28", percentage: 35, isUser: false },
-    { range: "6-10家", votes: "20", percentage: 25, isUser: true },
-    { range: "11-15家", votes: "16", percentage: 20, isUser: false },
-    { range: "16-20家", votes: "8", percentage: 10, isUser: false },
-    { range: "21家以上", votes: "4", percentage: 5, isUser: false },
-    { range: "失业中", votes: "4", percentage: 5, isUser: false },
+    { range: "0-2家", votes: "45", percentage: 30, isUser: false },
+    { range: "3-5家", votes: "38", percentage: 25, isUser: true },
+    { range: "6-8家", votes: "28", percentage: 19, isUser: false },
+    { range: "9-12家", votes: "22", percentage: 15, isUser: false },
+    { range: "13家以上", votes: "10", percentage: 6, isUser: false },
+    { range: "未面试", votes: "7", percentage: 5, isUser: false },
   ];
   
   const salaryDistribution = [
@@ -109,7 +109,7 @@ const SurveyResultsDemoPage = () => {
           <div className="absolute top-3 right-3 bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full border border-orange-200">
             示例数据
           </div>
-          <h3 className="text-lg font-medium mb-4 text-center text-wechat-green">🎯 面试频率对比</h3>
+          <h3 className="text-lg font-medium mb-4 text-center text-wechat-green">🎯 一个月平均面试几家</h3>
           
           <div className="space-y-3">
             {interviewData.map((item, index) => (

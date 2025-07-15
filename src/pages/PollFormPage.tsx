@@ -170,7 +170,7 @@ const PollFormPage: React.FC = () => {
               <div className="flex items-center">
                 <Input
                   id="currentSalary"
-                  placeholder="请输入内容"
+                  placeholder="统计同岗位同经验的当前平均薪资"
                   value={formData.currentSalary}
                   onChange={(e) => handleChange("currentSalary", e.target.value)}
                   className="wechat-input mt-1 flex-1"

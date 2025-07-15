@@ -85,7 +85,7 @@ const SurveyResultsDemoPage = () => {
           <div className="absolute top-3 right-3 bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full border border-orange-200">
             示例数据
           </div>
-          <h3 className="text-lg font-medium text-wechat-green mb-2 text-center">📊 个人数据分析</h3>
+          <h3 className="text-lg font-medium text-wechat-green mb-2 text-center">📊 个人竞争力</h3>
           {personalStats.map((stat, index) => (
             <div 
               key={index} 

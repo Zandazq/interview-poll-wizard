@@ -132,7 +132,8 @@ const PollFormPage: React.FC = () => {
                 { value: "11-15", label: "11-15", votes: "3214", percentage: "13.5" },
                 { value: "16-20", label: "16-20", votes: "2129", percentage: "8.95" },
                 { value: "21plus", label: "21家以上", votes: "3180", percentage: "13.36" },
-                { value: "在职", label: "失业中 | 处于休息模式", votes: "7716", percentage: "32.42" }
+                { value: "在职", label: "在职", votes: "5500", percentage: "23.12" },
+                { value: "失业中", label: "失业中 | 处于休息模式", votes: "7716", percentage: "32.42" }
               ].map((option) => (
                 <div key={option.value} className="wechat-radio-item rounded-lg" onClick={() => handleChange("interviews", option.value)}>
                   <div className="flex justify-between w-full">

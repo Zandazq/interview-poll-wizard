@@ -27,6 +27,7 @@ const PollFormPage: React.FC = () => {
     mortgage: "无",
     mortgageAmount: "",
     carLoan: "无",
+    carLoanAmount: "",
     otherLoans: "无",
     totalLoanAmount: "",
   });
@@ -239,6 +240,24 @@ const PollFormPage: React.FC = () => {
                     </div>
                   ))}
                 </div>
+                
+                {/* 车贷月还款金额 - 条件显示 */}
+                {formData.carLoan === "有" && (
+                  <div className="mt-3">
+                    <Label htmlFor="carLoanAmount" className="text-wechat-darkGray">月还款金额</Label>
+                    <div className="flex items-center">
+                      <Input
+                        id="carLoanAmount"
+                        placeholder="请输入月还款金额"
+                        value={formData.carLoanAmount}
+                        onChange={(e) => handleChange("carLoanAmount", e.target.value)}
+                        className="wechat-input mt-1 flex-1"
+                        type="number"
+                      />
+                      <span className="ml-2 text-wechat-darkGray">元/月</span>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* 其他贷款 */}

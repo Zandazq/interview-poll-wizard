@@ -12,7 +12,7 @@ import RecentCompletions from "@/components/RecentCompletions";
 const PollFormPage: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    workExperience: "",
+    workExperience: "应届生",
     age: "",
     city: "",
     education: "",
@@ -88,16 +88,45 @@ const PollFormPage: React.FC = () => {
           {/* Input Fields Section */}
           <div className="bg-white rounded-lg p-4 space-y-4">
             <div className="space-y-3">
-              <div>
-                <Label htmlFor="workExperience" className="text-wechat-darkGray">工作年限</Label>
-                <Input
-                  id="workExperience"
-                  placeholder="统计同经验的薪资"
-                  value={formData.workExperience}
-                  onChange={(e) => handleChange("workExperience", e.target.value)}
-                  className="wechat-input mt-1"
-                />
+              {/* Work Experience Section */}
+              <div className="bg-white rounded-lg p-4">
+                <h3 className="text-base font-medium mb-4">工作年限</h3>
+                <div className="space-y-3">
+                  {[
+                    "应届生",
+                    "实习生", 
+                    "1年以下",
+                    "1年",
+                    "2年",
+                    "3年",
+                    "4年",
+                    "5年",
+                    "6年",
+                    "7年",
+                    "8年",
+                    "9年",
+                    "10年",
+                    "10年以上"
+                  ].map((option) => (
+                    <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("workExperience", option)}>
+                      <div className="flex justify-between w-full">
+                        <Label className="text-wechat-darkGray cursor-pointer">
+                          {option}
+                        </Label>
+                        <div className={`wechat-checkbox-icon ${formData.workExperience === option ? "wechat-checkbox-selected" : ""}`}>
+                          {formData.workExperience === option && <Check className="h-3 w-3" />}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
+            </div>
+          </div>
+          
+          {/* Basic Info Section */}
+          <div className="bg-white rounded-lg p-4 space-y-4">
+            <div className="space-y-3">
               
               <div>
                 <Label htmlFor="age" className="text-wechat-darkGray">年龄</Label>

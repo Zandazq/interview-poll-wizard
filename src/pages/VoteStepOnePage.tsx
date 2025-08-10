@@ -4,12 +4,14 @@ import Header from "@/components/Layout/Header";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { Check } from "lucide-react";
 
 const VoteStepOnePage: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     city: "",
     position: "",
+    employmentStatus: "在职",
   });
 
   const handleChange = (field: string, value: string) => {
@@ -73,6 +75,25 @@ const VoteStepOnePage: React.FC = () => {
                 onChange={(e) => handleChange("position", e.target.value)}
                 className="wechat-input"
               />
+            </div>
+          </div>
+
+          {/* Employment Status Section */}
+          <div className="bg-white rounded-lg p-4">
+            <h3 className="text-base font-medium mb-4 text-wechat-darkGray">就业状态</h3>
+            <div className="space-y-3">
+              {["在职", "失业中"].map((option) => (
+                <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("employmentStatus", option)}>
+                  <div className="flex justify-between w-full">
+                    <Label className="text-wechat-darkGray cursor-pointer">
+                      {option}
+                    </Label>
+                    <div className={`wechat-checkbox-icon ${formData.employmentStatus === option ? "wechat-checkbox-selected" : ""}`}>
+                      {formData.employmentStatus === option && <Check className="h-3 w-3" />}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 

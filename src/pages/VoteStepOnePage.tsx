@@ -20,13 +20,24 @@ const VoteStepOnePage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // 可以通过URL参数或状态管理传递选择的城市和岗位信息
-    navigate("/poll-form", { 
-      state: { 
-        selectedCity: formData.city, 
-        selectedPosition: formData.position 
-      } 
-    });
+    // 根据就业状态导航到不同页面
+    if (formData.employmentStatus === "失业中") {
+      navigate("/vote-step-two", { 
+        state: { 
+          selectedCity: formData.city, 
+          selectedPosition: formData.position,
+          employmentStatus: formData.employmentStatus
+        } 
+      });
+    } else {
+      navigate("/vote-step-three", { 
+        state: { 
+          selectedCity: formData.city, 
+          selectedPosition: formData.position,
+          employmentStatus: formData.employmentStatus
+        } 
+      });
+    }
   };
 
   const isFormValid = formData.city.trim() !== "" && formData.position.trim() !== "";

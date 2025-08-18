@@ -10,7 +10,7 @@ const VoteStepTwoPage: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     annualIncome: "",
-    majorRelevance: "1-10分",
+    majorRelevance: "",
     skillProficiency: "单选",
     age: "",
     graduationTime: "",
@@ -66,16 +66,21 @@ const VoteStepTwoPage: React.FC = () => {
 
           {/* 专业对口相关性 */}
           <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">专业对口相关性 (1-10分)</h3>
+            <h3 className="text-base font-medium mb-4">专业对口相关性</h3>
             <div className="space-y-3">
-              {Array.from({length: 10}, (_, i) => (i + 1).toString()).map((score) => (
-                <div key={score} className="wechat-radio-item rounded-lg" onClick={() => handleChange("majorRelevance", score)}>
+              {[
+                "😭 完全无关​​：转行/技能用不上",
+                "🙂弱相关​​：部分通识课有用/需自学转行", 
+                "😊较对口​​：专业大类匹配但细分方向不同",
+                "🌟高度对口​​：专业名称与岗位直接一致"
+              ].map((option) => (
+                <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("majorRelevance", option)}>
                   <div className="flex justify-between w-full">
                     <Label className="text-wechat-darkGray cursor-pointer">
-                      {score}分
+                      {option}
                     </Label>
-                    <div className={`wechat-checkbox-icon ${formData.majorRelevance === score ? "wechat-checkbox-selected" : ""}`}>
-                      {formData.majorRelevance === score && <Check className="h-3 w-3" />}
+                    <div className={`wechat-checkbox-icon ${formData.majorRelevance === option ? "wechat-checkbox-selected" : ""}`}>
+                      {formData.majorRelevance === option && <Check className="h-3 w-3" />}
                     </div>
                   </div>
                 </div>

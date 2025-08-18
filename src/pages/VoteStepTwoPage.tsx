@@ -90,7 +90,7 @@ const VoteStepTwoPage: React.FC = () => {
 
           {/* 通勤高票指数 */}
           <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">通勤高票指数 (单选)</h3>
+            <h3 className="text-base font-medium mb-4">单程通勤时长 (单选)</h3>
             <div className="space-y-3">
               {[
                 "🏠  ≤10分钟​​：拖鞋睡衣上班党",

@@ -4,6 +4,7 @@ import Header from "@/components/Layout/Header";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { Slider } from "@/components/ui/slider";
 import { Check } from "lucide-react";
 
 const VoteStepTwoPage: React.FC = () => {
@@ -16,13 +17,17 @@ const VoteStepTwoPage: React.FC = () => {
     graduationTime: "",
     school: "",
     major: "",
-    majorGrade: "1-10分",
+    majorGrade: [5],
     skillComparison: "可选",
     industryExperience: "单选",
   });
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSliderChange = (value: number[]) => {
+    setFormData((prev) => ({ ...prev, majorGrade: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -172,19 +177,22 @@ const VoteStepTwoPage: React.FC = () => {
           {/* 对本专业的前景打分 */}
           <div className="bg-white rounded-lg p-4">
             <h3 className="text-base font-medium mb-4">对本专业的前景打分 (1-10分)</h3>
-            <div className="space-y-3">
-              {Array.from({length: 10}, (_, i) => (i + 1).toString()).map((score) => (
-                <div key={score} className="wechat-radio-item rounded-lg" onClick={() => handleChange("majorGrade", score)}>
-                  <div className="flex justify-between w-full">
-                    <Label className="text-wechat-darkGray cursor-pointer">
-                      {score}分
-                    </Label>
-                    <div className={`wechat-checkbox-icon ${formData.majorGrade === score ? "wechat-checkbox-selected" : ""}`}>
-                      {formData.majorGrade === score && <Check className="h-3 w-3" />}
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="space-y-4">
+              <div className="flex justify-between text-sm text-wechat-mediumGray">
+                <span>1分</span>
+                <span>10分</span>
+              </div>
+              <Slider
+                value={formData.majorGrade}
+                onValueChange={handleSliderChange}
+                max={10}
+                min={1}
+                step={1}
+                className="w-full"
+              />
+              <div className="text-center text-base font-medium text-wechat-darkGray">
+                当前评分: {formData.majorGrade[0]}分
+              </div>
             </div>
           </div>
 

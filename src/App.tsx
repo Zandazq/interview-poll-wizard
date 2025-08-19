@@ -12,6 +12,7 @@ import PollFormPage from "./pages/PollFormPage";
 import VoteStepOnePage from "./pages/VoteStepOnePage";
 import VoteStepTwoPage from "./pages/VoteStepTwoPage";
 import VoteStepThreePage from "./pages/VoteStepThreePage";
+import JobInfoPage from "./pages/JobInfoPage";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<VoteStepOnePage />} />
+          <Route path="/job-info" element={<JobInfoPage />} />
           <Route path="/vote-step-one" element={<VoteStepOnePage />} />
           <Route path="/vote-step-two" element={<VoteStepTwoPage />} />
           <Route path="/vote-step-three" element={<VoteStepThreePage />} />

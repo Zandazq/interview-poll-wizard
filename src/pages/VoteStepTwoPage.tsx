@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Layout/Header";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
@@ -18,7 +19,7 @@ const VoteStepTwoPage: React.FC = () => {
     school: "",
     major: "",
     majorGrade: [5],
-    skillComparison: "可选",
+    skillComparison: "",
     industryExperience: "单选",
   });
 
@@ -199,19 +200,19 @@ const VoteStepTwoPage: React.FC = () => {
           {/* 一句话比拟本专业状况 */}
           <div className="bg-white rounded-lg p-4">
             <h3 className="text-base font-medium mb-4">一句话吐槽本专业硬伤（可选）</h3>
-            <div className="space-y-3">
-              {["前景光明", "平平无奇", "竞争激烈", "不太乐观", "需要转行"].map((option) => (
-                <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("skillComparison", option)}>
-                  <div className="flex justify-between w-full">
-                    <Label className="text-wechat-darkGray cursor-pointer">
-                      {option}
-                    </Label>
-                    <div className={`wechat-checkbox-icon ${formData.skillComparison === option ? "wechat-checkbox-selected" : ""}`}>
-                      {formData.skillComparison === option && <Check className="h-3 w-3" />}
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="space-y-2">
+              <Textarea
+                id="skillComparison"
+                placeholder="请吐槽您专业的硬伤..."
+                value={formData.skillComparison}
+                onChange={(e) => handleChange("skillComparison", e.target.value)}
+                className="wechat-input resize-none"
+                maxLength={50}
+                rows={3}
+              />
+              <div className="text-right text-xs text-wechat-mediumGray">
+                {formData.skillComparison.length}/50字
+              </div>
             </div>
           </div>
 

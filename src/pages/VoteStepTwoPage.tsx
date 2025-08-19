@@ -198,7 +198,7 @@ const VoteStepTwoPage: React.FC = () => {
 
           {/* 一句话比拟本专业状况 */}
           <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">一句话比拟本专业状况 (可选)</h3>
+            <h3 className="text-base font-medium mb-4">一句话吐槽本专业硬伤（可选）</h3>
             <div className="space-y-3">
               {["前景光明", "平平无奇", "竞争激烈", "不太乐观", "需要转行"].map((option) => (
                 <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("skillComparison", option)}>

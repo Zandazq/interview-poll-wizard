@@ -79,7 +79,7 @@ const JobInfoPage: React.FC = () => {
 
           {/* gap周期（单选） */}
           <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">gap周期（单选）</h3>
+            <h3 className="text-base font-medium mb-4">⏳ 多久没上班了？</h3>
             <div className="space-y-3">
               {[
                 "📅 无gap：在职/在校",

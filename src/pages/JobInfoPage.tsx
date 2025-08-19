@@ -57,7 +57,7 @@ const JobInfoPage: React.FC = () => {
 
           {/* 角色（单选，社招还是应届生） */}
           <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">角色（单选，社招还是应届生）</h3>
+            <h3 className="text-base font-medium mb-4">你正在哪种生存模式？</h3>
             <div className="space-y-3">
               {[
                 "🎓 应届生：初入职场小白",

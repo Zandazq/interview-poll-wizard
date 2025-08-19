@@ -220,7 +220,7 @@ const VoteStepTwoPage: React.FC = () => {
           <div className="bg-white rounded-lg p-4">
             <h3 className="text-base font-medium mb-4">行业选择倾向 (单选)</h3>
             <div className="space-y-3">
-              {["互联网", "金融", "制造业", "教育", "医疗", "政府机构", "创业", "其他"].map((option) => (
+              {["坚定本专业", "想转行", "想考公/考编", "创业"].map((option) => (
                 <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("industryExperience", option)}>
                   <div className="flex justify-between w-full">
                     <Label className="text-wechat-darkGray cursor-pointer">

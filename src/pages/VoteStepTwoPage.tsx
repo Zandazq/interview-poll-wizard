@@ -212,6 +212,32 @@ const VoteStepTwoPage: React.FC = () => {
           {/* 对本专业的前景打分 */}
           <div className="bg-white rounded-lg p-4">
             <h3 className="text-base font-medium mb-4">🔥 你的专业还能混口饭吗？（10分最香，1分快逃）</h3>
+            
+            <div className="mb-4 text-sm text-wechat-mediumGray bg-gray-50 rounded-lg p-3">
+              <div className="space-y-2">
+                <div>
+                  <span className="font-medium text-red-600">1-3分：趁早改行</span>
+                  <div className="ml-4 text-xs">→ "毕业即失业，送外卖都嫌晚"</div>
+                </div>
+                <div>
+                  <span className="font-medium text-orange-600">4-5分：勉强糊口</span>
+                  <div className="ml-4 text-xs">→ "工资不够房租，靠爹妈接济"</div>
+                </div>
+                <div>
+                  <span className="font-medium text-yellow-600">6-7分：饿不死</span>
+                  <div className="ml-4 text-xs">→ "加班换温饱，升职别想了"</div>
+                </div>
+                <div>
+                  <span className="font-medium text-blue-600">8-9分：吃香喝辣</span>
+                  <div className="ml-4 text-xs">→ "猎头天天挖，跳槽就加薪"</div>
+                </div>
+                <div>
+                  <span className="font-medium text-green-600">10分：人生赢家</span>
+                  <div className="ml-4 text-xs">→ "躺着数钱，公司怕你离职"</div>
+                </div>
+              </div>
+            </div>
+            
             <div className="space-y-4">
               <div className="flex justify-between text-sm text-wechat-mediumGray">
                 <span>1分</span>

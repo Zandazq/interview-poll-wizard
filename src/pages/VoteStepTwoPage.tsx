@@ -60,6 +60,22 @@ const VoteStepTwoPage: React.FC = () => {
             <Label htmlFor="annualIncome" className="text-wechat-darkGray mb-2 block">
               💰 您的年薪总包（单位：万元）
             </Label>
+            
+            <div className="mb-4 text-sm text-wechat-mediumGray bg-gray-50 rounded-lg p-3">
+              <div className="mb-2">
+                <strong>▸ 含税年薪 = 月薪×12 + 年终奖 + 补贴</strong>
+              </div>
+              <div className="mb-2">▸ 销售岗：底薪+提成年度总值</div>
+              <div className="mb-3">▸ 股票/期权：按当前市场价值估算</div>
+              
+              <div className="border-t pt-3">
+                <div className="font-medium text-wechat-darkGray mb-2">📌 填报指南：</div>
+                <div className="mb-1">◉ 在职：填写当前预估年收入</div>
+                <div className="mb-1">◉ 求职中：填写上份工作年收入</div>
+                <div>◉ 自由职业：填写去年实际收入</div>
+              </div>
+            </div>
+            
             <Input
               id="annualIncome"
               placeholder="请输入年收入"

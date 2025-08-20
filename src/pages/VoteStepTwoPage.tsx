@@ -193,6 +193,12 @@ const VoteStepTwoPage: React.FC = () => {
               <Label htmlFor="major" className="text-wechat-darkGray mb-2 block">
                 专业
               </Label>
+              
+              <div className="mb-4 text-sm text-wechat-mediumGray bg-gray-50 rounded-lg p-3">
+                <div className="mb-2">📚 你的专业是金矿or天坑？</div>
+                <div className="font-medium text-wechat-darkGray">💡 解锁秘籍：输入专业查对口率&薪资</div>
+              </div>
+              
               <Input
                 id="major"
                 placeholder="请输入专业名称"

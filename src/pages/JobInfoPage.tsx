@@ -82,11 +82,11 @@ const JobInfoPage: React.FC = () => {
             <h3 className="text-base font-medium mb-4">⏳ 多久没上班了？</h3>
             <div className="space-y-3">
               {[
-                "没休息：快累死了",
-                "1-3个月：简历没人理",
-                "3-6个月：要不上价了",
-                "半年-1年：半废品",
-                "1年以上：基本废了"
+                "🔋 在职：电量100%",
+                "📮 3个月以内：简历没人理",
+                "📉 3-6个月：要不上价了",
+                "🪫 半年-1年：半废品",
+                "🧟 1年以上：基本废了"
               ].map((option) => (
                 <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("gapPeriod", option)}>
                   <div className="flex justify-between w-full">

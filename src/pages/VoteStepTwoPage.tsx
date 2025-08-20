@@ -211,7 +211,7 @@ const VoteStepTwoPage: React.FC = () => {
 
           {/* 对本专业的前景打分 */}
           <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">对本专业的前景打分 (1-10分)</h3>
+            <h3 className="text-base font-medium mb-4">🔥 你的专业还能混口饭吗？（10分最香，1分快逃）</h3>
             <div className="space-y-4">
               <div className="flex justify-between text-sm text-wechat-mediumGray">
                 <span>1分</span>

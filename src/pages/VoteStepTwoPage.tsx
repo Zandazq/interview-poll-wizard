@@ -58,7 +58,7 @@ const VoteStepTwoPage: React.FC = () => {
           {/* 当前所在年收入 */}
           <div className="bg-white rounded-lg p-4">
             <Label htmlFor="annualIncome" className="text-wechat-darkGray mb-2 block">
-              当前所在年收入
+              💰 您的年薪总包（单位：万元）
             </Label>
             <Input
               id="annualIncome"

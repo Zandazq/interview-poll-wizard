@@ -141,6 +141,12 @@ const VoteStepTwoPage: React.FC = () => {
               <Label htmlFor="age" className="text-wechat-darkGray mb-2 block">
                 年龄
               </Label>
+              
+              <div className="mb-4 text-sm text-wechat-mediumGray bg-gray-50 rounded-lg p-3">
+                <div className="mb-2">同龄人都在赚多少？</div>
+                <div className="font-medium text-wechat-darkGray">💡 解锁秘籍：填写年龄看同龄人薪资段位</div>
+              </div>
+              
               <Input
                 id="age"
                 placeholder="请输入年龄"

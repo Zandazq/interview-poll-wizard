@@ -174,6 +174,12 @@ const VoteStepTwoPage: React.FC = () => {
               <Label htmlFor="school" className="text-wechat-darkGray mb-2 block">
                 学校
               </Label>
+              
+              <div className="mb-4 text-sm text-wechat-mediumGray bg-gray-50 rounded-lg p-3">
+                <div className="mb-2">🏫 你的母校多能打？</div>
+                <div className="font-medium text-wechat-darkGray">💡 解锁秘籍：输入学校查看校友薪资天花板</div>
+              </div>
+              
               <Input
                 id="school"
                 placeholder="请输入学校名称"

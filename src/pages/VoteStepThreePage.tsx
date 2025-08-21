@@ -227,9 +227,9 @@ const VoteStepThreePage: React.FC = () => {
             </div>
           </div>
 
-          {/* 一句话比拟当前岗位 */}
+          {/* 一句话吐槽本岗位 */}
           <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">一句话比拟当前岗位 (可选)</h3>
+            <h3 className="text-base font-medium mb-4">一句话吐槽本岗位（可选）</h3>
             <div className="space-y-3">
               {["钱多事少离家近", "996福报", "躺平养老", "卷到起飞", "看不到希望", "还算满意"].map((option) => (
                 <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("skillSelfAssessment", option)}>

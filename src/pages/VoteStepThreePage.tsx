@@ -207,9 +207,14 @@ const VoteStepThreePage: React.FC = () => {
               {["后悔", "不后悔"].map((option) => (
                 <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("position", option)}>
                   <div className="flex justify-between w-full">
-                    <Label className="text-wechat-darkGray cursor-pointer">
-                      {option}
-                    </Label>
+                    <div className="flex flex-col">
+                      <Label className="text-wechat-darkGray cursor-pointer">
+                        {option}
+                      </Label>
+                      {option === "后悔" && (
+                        <span className="text-xs text-wechat-mediumGray mt-1">每天麻木搬砖</span>
+                      )}
+                    </div>
                     <div className={`wechat-checkbox-icon ${formData.position === option ? "wechat-checkbox-selected" : ""}`}>
                       {formData.position === option && <Check className="h-3 w-3" />}
                     </div>

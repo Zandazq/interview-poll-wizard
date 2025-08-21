@@ -214,6 +214,9 @@ const VoteStepThreePage: React.FC = () => {
                       {option === "后悔" && (
                         <span className="text-xs text-wechat-mediumGray mt-1">每天麻木搬砖</span>
                       )}
+                      {option === "不后悔" && (
+                        <span className="text-xs text-wechat-mediumGray mt-1">庆幸入对行</span>
+                      )}
                     </div>
                     <div className={`wechat-checkbox-icon ${formData.position === option ? "wechat-checkbox-selected" : ""}`}>
                       {formData.position === option && <Check className="h-3 w-3" />}

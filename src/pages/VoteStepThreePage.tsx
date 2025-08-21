@@ -48,22 +48,35 @@ const VoteStepThreePage: React.FC = () => {
         </div>
         
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* 薪资年包 */}
+          {/* 当前所在年收入 */}
           <div className="bg-white rounded-lg p-4">
             <Label htmlFor="annualPackage" className="text-wechat-darkGray mb-2 block">
-              薪资年包
+              💰 您的年薪总包（单位：万元）
             </Label>
-            <div className="flex items-center">
-              <Input
-                id="annualPackage"
-                placeholder="请输入年包薪资"
-                value={formData.annualPackage}
-                onChange={(e) => handleChange("annualPackage", e.target.value)}
-                className="wechat-input flex-1"
-                type="number"
-              />
-              <span className="ml-2 text-wechat-darkGray">万元</span>
+            
+            <div className="mb-4 text-sm text-wechat-mediumGray bg-gray-50 rounded-lg p-3">
+              <div className="mb-2">
+                <strong>▸ 含税年薪 = 月薪×12 + 年终奖 + 补贴</strong>
+              </div>
+              <div className="mb-2">▸ 销售岗：底薪+提成年度总值</div>
+              <div className="mb-3">▸ 股票/期权：按当前市场价值估算</div>
+              
+              <div className="border-t pt-3">
+                <div className="font-medium text-wechat-darkGray mb-2">📌 填报指南：</div>
+                <div className="mb-1">◉ 在职：填写当前预估年收入</div>
+                <div className="mb-1">◉ 求职中：填写上份工作年收入</div>
+                <div>◉ 自由职业：填写去年实际收入</div>
+              </div>
             </div>
+            
+            <Input
+              id="annualPackage"
+              placeholder="请输入年收入"
+              value={formData.annualPackage}
+              onChange={(e) => handleChange("annualPackage", e.target.value)}
+              className="wechat-input"
+              type="number"
+            />
           </div>
 
           {/* 1个月平均投面试几家 */}

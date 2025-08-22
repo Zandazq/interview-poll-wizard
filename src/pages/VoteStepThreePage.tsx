@@ -36,7 +36,7 @@ const VoteStepThreePage: React.FC = () => {
     navigate("/results");
   };
 
-  const hasAnyLoan = formData.mortgage === "有" || formData.carLoan === "有" || formData.otherLoans === "有";
+  const hasAnyLoan = formData.mortgage === "有：房奴兄弟，抱一个" || formData.carLoan === "有" || formData.otherLoans === "有";
 
   return (
     <div className="wechat-container bg-[#F6F6F6]">
@@ -158,7 +158,7 @@ const VoteStepThreePage: React.FC = () => {
               <div>
                 <Label className="text-wechat-darkGray mb-3 block">房贷</Label>
                 <div className="space-y-2">
-                  {["有", "无"].map((option) => (
+                  {["有：房奴兄弟，抱一个", "无"].map((option) => (
                     <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("mortgage", option)}>
                       <div className="flex justify-between w-full">
                         <Label className="text-wechat-darkGray cursor-pointer">
@@ -173,7 +173,7 @@ const VoteStepThreePage: React.FC = () => {
                 </div>
                 
                 {/* 房贷月还款金额 - 条件显示 */}
-                {formData.mortgage === "有" && (
+                {formData.mortgage === "有：房奴兄弟，抱一个" && (
                   <div className="mt-3">
                     <Label htmlFor="mortgageAmount" className="text-wechat-darkGray">月还款金额</Label>
                     <div className="flex items-center">

@@ -14,7 +14,12 @@ const VoteStepThreePage: React.FC = () => {
     monthlyInterviews: "还没有开始面试",
     age: "",
     graduationTime: "",
-    lifePressure: "",
+    mortgage: "无",
+    mortgageAmount: "",
+    carLoan: "无",
+    carLoanAmount: "",
+    otherLoans: "无",
+    totalLoanAmount: "",
     commuteHappiness: "",
     overtime: "",
     position: "",
@@ -30,6 +35,8 @@ const VoteStepThreePage: React.FC = () => {
     console.log("Step 3 form submitted:", formData);
     navigate("/results");
   };
+
+  const hasAnyLoan = formData.mortgage === "有" || formData.carLoan === "有" || formData.otherLoans === "有";
 
   return (
     <div className="wechat-container bg-[#F6F6F6]">
@@ -145,16 +152,119 @@ const VoteStepThreePage: React.FC = () => {
 
           {/* 生活压力竞争力 */}
           <div className="bg-white rounded-lg p-4">
-            <Label htmlFor="lifePressure" className="text-wechat-darkGray mb-2 block">
-              生活压力竞争力
-            </Label>
-            <Input
-              id="lifePressure"
-              placeholder="请描述您的生活压力情况"
-              value={formData.lifePressure}
-              onChange={(e) => handleChange("lifePressure", e.target.value)}
-              className="wechat-input"
-            />
+            <h3 className="text-base font-medium mb-4">生活压力竞争力</h3>
+            <div className="space-y-4">
+              {/* 房贷 */}
+              <div>
+                <Label className="text-wechat-darkGray mb-3 block">房贷</Label>
+                <div className="space-y-2">
+                  {["有", "无"].map((option) => (
+                    <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("mortgage", option)}>
+                      <div className="flex justify-between w-full">
+                        <Label className="text-wechat-darkGray cursor-pointer">
+                          {option}
+                        </Label>
+                        <div className={`wechat-checkbox-icon ${formData.mortgage === option ? "wechat-checkbox-selected" : ""}`}>
+                          {formData.mortgage === option && <Check className="h-3 w-3" />}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* 房贷月还款金额 - 条件显示 */}
+                {formData.mortgage === "有" && (
+                  <div className="mt-3">
+                    <Label htmlFor="mortgageAmount" className="text-wechat-darkGray">月还款金额</Label>
+                    <div className="flex items-center">
+                      <Input
+                        id="mortgageAmount"
+                        placeholder="请输入月还款金额"
+                        value={formData.mortgageAmount}
+                        onChange={(e) => handleChange("mortgageAmount", e.target.value)}
+                        className="wechat-input mt-1 flex-1"
+                        type="number"
+                      />
+                      <span className="ml-2 text-wechat-darkGray">元/月</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* 车贷 */}
+              <div>
+                <Label className="text-wechat-darkGray mb-3 block">车贷</Label>
+                <div className="space-y-2">
+                  {["有", "无"].map((option) => (
+                    <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("carLoan", option)}>
+                      <div className="flex justify-between w-full">
+                        <Label className="text-wechat-darkGray cursor-pointer">
+                          {option}
+                        </Label>
+                        <div className={`wechat-checkbox-icon ${formData.carLoan === option ? "wechat-checkbox-selected" : ""}`}>
+                          {formData.carLoan === option && <Check className="h-3 w-3" />}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* 车贷月还款金额 - 条件显示 */}
+                {formData.carLoan === "有" && (
+                  <div className="mt-3">
+                    <Label htmlFor="carLoanAmount" className="text-wechat-darkGray">月还款金额</Label>
+                    <div className="flex items-center">
+                      <Input
+                        id="carLoanAmount"
+                        placeholder="请输入月还款金额"
+                        value={formData.carLoanAmount}
+                        onChange={(e) => handleChange("carLoanAmount", e.target.value)}
+                        className="wechat-input mt-1 flex-1"
+                        type="number"
+                      />
+                      <span className="ml-2 text-wechat-darkGray">元/月</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* 其他贷款 */}
+              <div>
+                <Label className="text-wechat-darkGray mb-3 block">其他贷款</Label>
+                <div className="space-y-2">
+                  {["有", "无"].map((option) => (
+                    <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("otherLoans", option)}>
+                      <div className="flex justify-between w-full">
+                        <Label className="text-wechat-darkGray cursor-pointer">
+                          {option}
+                        </Label>
+                        <div className={`wechat-checkbox-icon ${formData.otherLoans === option ? "wechat-checkbox-selected" : ""}`}>
+                          {formData.otherLoans === option && <Check className="h-3 w-3" />}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 总贷款金额 - 条件显示 */}
+              {hasAnyLoan && (
+                <div>
+                  <Label htmlFor="totalLoanAmount" className="text-wechat-darkGray">总贷款金额</Label>
+                  <div className="flex items-center">
+                    <Input
+                      id="totalLoanAmount"
+                      placeholder="请输入总贷款金额"
+                      value={formData.totalLoanAmount}
+                      onChange={(e) => handleChange("totalLoanAmount", e.target.value)}
+                      className="wechat-input mt-1 flex-1"
+                      type="number"
+                    />
+                    <span className="ml-2 text-wechat-darkGray">万元</span>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* 单程通勤时长 */}

@@ -36,7 +36,7 @@ const VoteStepThreePage: React.FC = () => {
     navigate("/results");
   };
 
-  const hasAnyLoan = formData.mortgage === "有：房奴兄弟，抱一个" || formData.carLoan === "有：车贷人，擦泪" || formData.otherLoans === "有";
+  const hasAnyLoan = formData.mortgage === "有：房奴兄弟，抱一个" || formData.carLoan === "有：车贷人，擦泪" || formData.otherLoans === "有：说出来让我们心里平衡下";
 
   return (
     <div className="wechat-container bg-[#F6F6F6]">
@@ -232,7 +232,7 @@ const VoteStepThreePage: React.FC = () => {
               <div>
                 <Label className="text-wechat-darkGray mb-3 block">其他贷款</Label>
                 <div className="space-y-2">
-                  {["有", "无"].map((option) => (
+                  {["有：说出来让我们心里平衡下", "无"].map((option) => (
                     <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("otherLoans", option)}>
                       <div className="flex justify-between w-full">
                         <Label className="text-wechat-darkGray cursor-pointer">

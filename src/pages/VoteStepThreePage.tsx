@@ -176,6 +176,11 @@ const VoteStepThreePage: React.FC = () => {
                 {formData.mortgage === "有：房奴兄弟，抱一个" && (
                   <div className="mt-3">
                     <Label htmlFor="mortgageAmount" className="text-wechat-darkGray">月还款金额</Label>
+                    
+                    <div className="mb-3 text-sm text-wechat-mediumGray bg-gray-50 rounded-lg p-3">
+                      <div className="font-medium text-wechat-darkGray">💡 查看你的「负重等级」打败全国多少房奴</div>
+                    </div>
+                    
                     <div className="flex items-center">
                       <Input
                         id="mortgageAmount"

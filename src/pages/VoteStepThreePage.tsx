@@ -14,7 +14,7 @@ const VoteStepThreePage: React.FC = () => {
     monthlyInterviews: "还没有开始面试",
     age: "",
     graduationTime: "",
-    mortgage: "无",
+    mortgage: "无：羡慕哭了",
     mortgageAmount: "",
     carLoan: "无",
     carLoanAmount: "",
@@ -158,7 +158,7 @@ const VoteStepThreePage: React.FC = () => {
               <div>
                 <Label className="text-wechat-darkGray mb-3 block">房贷</Label>
                 <div className="space-y-2">
-                  {["有：房奴兄弟，抱一个", "无"].map((option) => (
+                  {["有：房奴兄弟，抱一个", "无：羡慕哭了"].map((option) => (
                     <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("mortgage", option)}>
                       <div className="flex justify-between w-full">
                         <Label className="text-wechat-darkGray cursor-pointer">

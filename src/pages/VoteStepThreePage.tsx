@@ -218,6 +218,11 @@ const VoteStepThreePage: React.FC = () => {
                 {formData.carLoan === "有：车贷人，擦泪" && (
                   <div className="mt-3">
                     <Label htmlFor="carLoanAmount" className="text-wechat-darkGray">月还款金额</Label>
+                    
+                    <div className="mb-3 text-sm text-wechat-mediumGray bg-gray-50 rounded-lg p-3">
+                      <div className="font-medium text-wechat-darkGray">💡 填了就知道你打败全国多少"负翁"</div>
+                    </div>
+                    
                     <div className="flex items-center">
                       <Input
                         id="carLoanAmount"

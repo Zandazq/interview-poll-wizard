@@ -89,7 +89,7 @@ const VoteStepThreePage: React.FC = () => {
 
           {/* 1个月平均投面试几家 */}
           <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">1个月平均投面试几家 (提供在职/失业)</h3>
+            <h3 className="text-base font-medium mb-4">1个月平均投面试几家</h3>
             <div className="space-y-3">
               {[
                 "还没有开始面试",

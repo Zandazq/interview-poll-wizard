@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Check } from "lucide-react";
 
 const VoteStepThreePage: React.FC = () => {
@@ -21,6 +22,7 @@ const VoteStepThreePage: React.FC = () => {
     otherLoans: "无",
     totalLoanAmount: "",
     commuteHappiness: "",
+    education: "",
     overtime: "",
     position: "",
     skillSelfAssessment: "",
@@ -312,21 +314,21 @@ const VoteStepThreePage: React.FC = () => {
 
           {/* 学历 */}
           <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">学历 (下拉选择)</h3>
-            <div className="space-y-3">
-              {["高中及以下", "专科", "本科", "硕士", "博士"].map((option) => (
-                <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("overtime", option)}>
-                  <div className="flex justify-between w-full">
-                    <Label className="text-wechat-darkGray cursor-pointer">
-                      {option}
-                    </Label>
-                    <div className={`wechat-checkbox-icon ${formData.overtime === option ? "wechat-checkbox-selected" : ""}`}>
-                      {formData.overtime === option && <Check className="h-3 w-3" />}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <Label htmlFor="education" className="text-wechat-darkGray mb-2 block">
+              学历 (下拉选择)
+            </Label>
+            <Select value={formData.education} onValueChange={(value) => handleChange("education", value)}>
+              <SelectTrigger className="wechat-input">
+                <SelectValue placeholder="请选择学历" />
+              </SelectTrigger>
+              <SelectContent className="z-50 bg-white">
+                <SelectItem value="高中及以下">高中及以下</SelectItem>
+                <SelectItem value="专科">专科</SelectItem>
+                <SelectItem value="本科">本科</SelectItem>
+                <SelectItem value="硕士">硕士</SelectItem>
+                <SelectItem value="博士">博士</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           {/* 后悔吗 */}

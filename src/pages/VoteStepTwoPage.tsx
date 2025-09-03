@@ -6,10 +6,24 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Check } from "lucide-react";
 
 const VoteStepTwoPage: React.FC = () => {
   const navigate = useNavigate();
+  
+  const schools = [
+    "清华大学", "北京大学", "复旦大学", "上海交通大学", "浙江大学", "中国科学技术大学",
+    "南京大学", "华中科技大学", "中山大学", "西安交通大学", "哈尔滨工业大学", "北京航空航天大学",
+    "同济大学", "四川大学", "东南大学", "北京师范大学", "武汉大学", "南开大学", 
+    "山东大学", "中南大学", "西北工业大学", "大连理工大学", "重庆大学", "电子科技大学",
+    "华南理工大学", "北京理工大学", "天津大学", "东北大学", "湖南大学", "兰州大学",
+    "华东师范大学", "中国农业大学", "北京科技大学", "西南交通大学", "华中师范大学", "中国海洋大学",
+    "北京交通大学", "南京理工大学", "华东理工大学", "北京邮电大学", "合肥工业大学", "南京航空航天大学",
+    "西安电子科技大学", "西南大学", "暨南大学", "北京化工大学", "陕西师范大学", "河海大学",
+    "北京工业大学", "福州大学", "广西大学", "中国石油大学", "云南大学", "太原理工大学"
+  ];
+  
   const [formData, setFormData] = useState({
     annualIncome: "",
     majorRelevance: "",
@@ -179,13 +193,18 @@ const VoteStepTwoPage: React.FC = () => {
                 <div className="font-medium text-wechat-darkGray">💡 解锁秘籍：输入学校查看校友薪资天花板</div>
               </div>
               
-              <Input
-                id="school"
-                placeholder="请输入学校名称"
-                value={formData.school}
-                onChange={(e) => handleChange("school", e.target.value)}
-                className="wechat-input"
-              />
+              <Select value={formData.school} onValueChange={(value) => handleChange("school", value)}>
+                <SelectTrigger className="wechat-input">
+                  <SelectValue placeholder="请选择学校" />
+                </SelectTrigger>
+                <SelectContent className="bg-white border border-gray-200 rounded-lg shadow-lg max-h-48">
+                  {schools.map((school) => (
+                    <SelectItem key={school} value={school} className="hover:bg-gray-50">
+                      {school}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
             <div>

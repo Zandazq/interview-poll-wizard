@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PollsPage from "./pages/PollsPage";
 import SurveyResultsPage from "./pages/SurveyResultsPage";
 import SurveyResultsDemoPage from "./pages/SurveyResultsDemoPage";
+import SalaryRankingPage from "./pages/SalaryRankingPage";
 import PollFormPage from "./pages/PollFormPage";
 import VoteStepOnePage from "./pages/VoteStepOnePage";
 import VoteStepTwoPage from "./pages/VoteStepTwoPage";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/polls" element={<PollsPage />} />
           <Route path="/results" element={<SurveyResultsPage />} />
           <Route path="/results-demo" element={<SurveyResultsDemoPage />} />
+          <Route path="/salary-ranking" element={<SalaryRankingPage />} />
           <Route path="/poll-form" element={<PollFormPage />} />
         </Routes>
       </BrowserRouter>

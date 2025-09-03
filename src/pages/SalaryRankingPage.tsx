@@ -54,7 +54,7 @@ const SalaryRankingPage = () => {
     { label: "全国平均薪资", value: 8500, icon: "🏢" },
     { label: "同城市平均", value: 12000, icon: "🏙️" },
     { label: "同行业平均", value: 13500, icon: "💼" },
-    { label: "同学历平均", value: 11800, icon: "🎓" },
+    { label: "同年龄平均", value: 11800, icon: "👥" },
   ];
 
   return (

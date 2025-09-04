@@ -39,7 +39,6 @@ const VoteStepTwoPage: React.FC = () => {
   const [formData, setFormData] = useState({
     annualIncome: "",
     majorRelevance: "",
-    skillProficiency: "单选",
     age: "",
     graduationTime: "",
     school: "",
@@ -135,30 +134,6 @@ const VoteStepTwoPage: React.FC = () => {
             </div>
           </div>
 
-          {/* 通勤高票指数 */}
-          <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">单程通勤时长 (单选)</h3>
-            <div className="space-y-3">
-              {[
-                "🏠  ≤10分钟​​：拖鞋睡衣上班党",
-                "🚲  11-20分钟​​：单车小电驴搞定",
-                "🚇  21-45分钟​​：刷完朋友圈刚好到",
-                "🔥  46-90分钟​​：每天多打1小时黑工",
-                "🌌  >90分钟​​：周一起床时室友刚睡"
-              ].map((option) => (
-                <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("skillProficiency", option)}>
-                  <div className="flex justify-between w-full">
-                    <Label className="text-wechat-darkGray cursor-pointer">
-                      {option}
-                    </Label>
-                    <div className={`wechat-checkbox-icon ${formData.skillProficiency === option ? "wechat-checkbox-selected" : ""}`}>
-                      {formData.skillProficiency === option && <Check className="h-3 w-3" />}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* 基本信息 */}
           <div className="bg-white rounded-lg p-4 space-y-4">

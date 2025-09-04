@@ -22,29 +22,29 @@ const SalaryRankingPage = () => {
   const getOverallMessage = (percentile: number) => {
     if (percentile >= 90) {
       return {
-        title: "你站在了金字塔尖！",
-        subtitle: "大佬，饿饿，饭饭！",
+        title: "你站在了金字塔尖！大佬，饿饿，饭饭！",
+        subtitle: "",
         icon: "👑",
         color: "bg-gradient-to-r from-yellow-400 to-orange-500"
       };
     } else if (percentile >= 70) {
       return {
-        title: "优秀！",
-        subtitle: "你已经跑赢了绝大多数同龄人！",
+        title: "优秀！你已经跑赢了绝大多数同龄人！",
+        subtitle: "",
         icon: "🚀", 
         color: "bg-gradient-to-r from-green-400 to-blue-500"
       };
-    } else if (percentile >= 60) {
+    } else if (percentile >= 40) {
       return {
-        title: "稳稳的中坚力量",
-        subtitle: "生活不止有工作，还有诗和远方~",
+        title: "稳稳的中坚力量，生活不止有工作，还有诗和远方~",
+        subtitle: "",
         icon: "🌟",
         color: "bg-gradient-to-r from-blue-400 to-purple-500"
       };
     } else {
       return {
-        title: "兄dei，是时候支棱起来了！",
-        subtitle: "你的潜力不止于此！",
+        title: "兄dei，是时候支棱起来了！你的潜力不止于此！",
+        subtitle: "",
         icon: "💪",
         color: "bg-gradient-to-r from-purple-400 to-pink-500"
       };
@@ -56,7 +56,7 @@ const SalaryRankingPage = () => {
     const birthYear = new Date().getFullYear() - userAge;
     if (percentile >= 80) {
       return {
-        title: `${birthYear}年的你，活成了${birthYear-1}后羡慕的样子！`,
+        title: `97年的你，活成了95后羡慕的样子！`,
         icon: "🏆",
         color: "bg-gradient-to-r from-pink-400 to-red-500"
       };
@@ -129,9 +129,6 @@ const SalaryRankingPage = () => {
             <div className="text-center space-y-3">
               <div className="text-xl font-bold text-gray-800">
                 {overallData.title}
-              </div>
-              <div className="text-lg text-wechat-darkGray">
-                {overallData.subtitle}
               </div>
               
               <div className="flex items-center justify-center space-x-2 mt-4">
@@ -215,13 +212,11 @@ const SalaryRankingPage = () => {
             
             <div className="space-y-3 text-sm">
               <div className="flex items-center justify-between p-3 bg-yellow-50 rounded-lg">
-                <span className="text-gray-700">哦豁，你的直系学长平均薪资是</span>
-                <span className="font-bold text-orange-600">¥18,500</span>
+                <span className="text-gray-700">哦豁，你的直系学长平均薪资是¥18,500，差距看到了吗？</span>
               </div>
               
               <div className="flex items-center justify-between p-3 bg-red-50 rounded-lg">
-                <span className="text-gray-700">别划走！你的一位同班同学薪资比你高</span>
-                <span className="font-bold text-red-600">¥5,000 👀</span>
+                <span className="text-gray-700">别划走！你的一位同班同学薪资比你高¥5,000 👀</span>
               </div>
             </div>
           </div>

@@ -206,6 +206,97 @@ const SalaryRankingPage = () => {
           </div>
         </Card>
 
+        {/* Major Prospects Module */}
+        <Card className="p-4 bg-white">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <span className="text-lg">🔥</span>
+              <span className="text-sm font-medium">你的专业还能混口饭吗？</span>
+            </div>
+            <div className="text-xs text-gray-500">(10分最香，1分快逃)</div>
+          </div>
+          
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-red-600 font-bold">1-3分:</span>
+                <span className="text-sm text-gray-700">趁早改行</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600">28 票</span>
+                <span className="text-sm font-medium text-green-600">12%</span>
+              </div>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2">
+              <div className="bg-green-500 h-2 rounded-full" style={{ width: "12%" }}></div>
+            </div>
+            <div className="text-xs text-gray-500 ml-4">→ "毕业即失业，送外卖都嫌晚"</div>
+            
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-orange-600 font-bold">4-5分:</span>
+                <span className="text-sm text-gray-700">勉强糊口</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600">45 票</span>
+                <span className="text-sm font-medium text-green-600">19%</span>
+              </div>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2">
+              <div className="bg-green-500 h-2 rounded-full" style={{ width: "19%" }}></div>
+            </div>
+            <div className="text-xs text-gray-500 ml-4">→ "工资不够房租，靠爹妈接济"</div>
+            
+            <div className="border-2 border-green-400 rounded-lg p-3 bg-green-50">
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-yellow-600 font-bold">6-7分:</span>
+                  <span className="text-sm text-gray-700">饿不死</span>
+                  <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">您的选择</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-gray-600">68 票</span>
+                  <span className="text-sm font-medium text-green-600">28%</span>
+                </div>
+              </div>
+              <div className="w-full bg-gray-100 rounded-full h-2">
+                <div className="bg-green-500 h-2 rounded-full" style={{ width: "28%" }}></div>
+              </div>
+              <div className="text-xs text-gray-500 ml-4">→ "加班换温饱，升职别想了"</div>
+            </div>
+            
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-blue-600 font-bold">8-9分:</span>
+                <span className="text-sm text-gray-700">吃香喝辣</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600">72 票</span>
+                <span className="text-sm font-medium text-green-600">30%</span>
+              </div>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2">
+              <div className="bg-green-500 h-2 rounded-full" style={{ width: "30%" }}></div>
+            </div>
+            <div className="text-xs text-gray-500 ml-4">→ "猪头天天挖，跳槽就加薪"</div>
+            
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-green-600 font-bold">10分:</span>
+                <span className="text-sm text-gray-700">人生赢家</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600">27 票</span>
+                <span className="text-sm font-medium text-green-600">11%</span>
+              </div>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2">
+              <div className="bg-green-500 h-2 rounded-full" style={{ width: "11%" }}></div>
+            </div>
+            <div className="text-xs text-gray-500 ml-4">→ "躺着数钱，公司怕你离职"</div>
+          </div>
+        </Card>
+
         {/* Major Complaints */}
         <Card className="p-4 bg-white">
           <div className="text-center">

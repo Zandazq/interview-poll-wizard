@@ -3,6 +3,7 @@ import Header from "@/components/Layout/Header";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Share2, Trophy, Users, Building2 } from "lucide-react";
 
 const SalaryRankingPage = () => {
   const navigate = useNavigate();
@@ -52,6 +53,19 @@ const SalaryRankingPage = () => {
     { text: "越老越吃香（香不香我不知道）", icon: "👴", count: 156 }
   ];
 
+  const handleShare = () => {
+    const text = `我的薪资打败了全国${userPercentile}%的求职者！🚀\n查看你的薪资排名 👇`;
+    if (navigator.share) {
+      navigator.share({
+        title: '薪资排名',
+        text: text,
+        url: window.location.href
+      });
+    } else {
+      navigator.clipboard.writeText(`${text}\n${window.location.href}`);
+    }
+  };
+
   const overallData = getOverallMessage(userPercentile);
   const ageData = getAgeMessage(agePercentile);
   const industryData = getIndustryMessage(industryPercentile);
@@ -64,125 +78,99 @@ const SalaryRankingPage = () => {
         showBack={true}
       />
       
-      <div className="p-4 space-y-4">
-        {/* 1. Overall Salary Ranking */}
-        <Card className="p-6 bg-white border border-gray-200">
-          <div className="text-center space-y-4">
-            <h1 className="text-lg font-bold text-gray-800">
-              🤑 你的薪资打败了全国多少对手？
-            </h1>
-            <div className="text-4xl">{overallData.icon}</div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">{userPercentile}%</div>
-              <div className="text-gray-600">打败了全国{userPercentile}%的求职者</div>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-4">
-              <div className="text-base font-medium text-gray-800">
-                {overallData.title}
-              </div>
-            </div>
-            <div className="text-sm text-gray-600">
-              你的薪资: ¥{userSalary.toLocaleString()}
-            </div>
-          </div>
+      <div className="p-4 space-y-3">
+        {/* Main Result Card */}
+        <Card className="p-4 bg-white text-center">
+          <div className="text-3xl mb-2">{overallData.icon}</div>
+          <h1 className="text-lg font-bold mb-2">🤑 你的薪资打败了全国多少对手？</h1>
+          <div className="text-2xl font-bold text-primary mb-1">{userPercentile}%</div>
+          <div className="text-sm text-gray-600 mb-2">你的薪资: ¥{userSalary.toLocaleString()}</div>
+          <div className="bg-gray-50 rounded p-2 text-sm">{overallData.title}</div>
         </Card>
 
-        {/* 2. Age-based Salary Ranking */}
-        <Card className="p-4 bg-white">
-          <div className="text-center space-y-3">
-            <h2 className="text-base font-bold text-gray-800">
-              📊 和同龄人PK，你是啥段位？
-            </h2>
-            <div className="text-2xl">{ageData.icon}</div>
-            <div className="text-xl font-bold text-blue-600">{agePercentile}%</div>
-            <div className="text-sm text-gray-600">{ageData.title}</div>
-          </div>
-        </Card>
+        {/* Quick Stats Grid */}
+        <div className="grid grid-cols-3 gap-2">
+          <Card className="p-3 text-center bg-white">
+            <div className="text-lg">{ageData.icon}</div>
+            <div className="text-xs text-gray-600 mb-1">同龄PK</div>
+            <div className="text-sm font-bold text-blue-600">{agePercentile}%</div>
+          </Card>
+          
+          <Card className="p-3 text-center bg-white">
+            <div className="text-lg">{industryData.icon}</div>
+            <div className="text-xs text-gray-600 mb-1">行业排名</div>
+            <div className="text-sm font-bold text-green-600">{industryPercentile}%</div>
+          </Card>
+          
+          <Card className="p-3 text-center bg-white">
+            <div className="text-lg">🎓</div>
+            <div className="text-xs text-gray-600 mb-1">校友圈</div>
+            <div className="text-sm font-bold text-purple-600">{alumniPercentile}%</div>
+          </Card>
+        </div>
 
-        {/* 3. Industry Salary Ranking */}
+        {/* Insights */}
         <Card className="p-4 bg-white">
-          <div className="text-center space-y-3">
-            <h2 className="text-base font-bold text-gray-800">
-              ⚔️ 在本行当里，你是卷王还是躺平？
-            </h2>
-            <div className="text-2xl">{industryData.icon}</div>
-            <div className="text-xl font-bold text-green-600">{industryPercentile}%</div>
-            <div className="text-sm text-gray-600">{industryData.title}</div>
-          </div>
-        </Card>
-
-        {/* 4. Alumni Salary Discovery */}
-        <Card className="p-4 bg-white">
-          <div className="text-center space-y-3">
-            <h2 className="text-base font-bold text-gray-800">
-              🏫 校友圈薪资大揭秘！没给母校丢脸吧？
-            </h2>
-            <div className="text-2xl">🎓</div>
-            <div className="text-xl font-bold text-purple-600">{alumniPercentile}%</div>
-            <div className="text-sm text-gray-600 mb-2">
-              你的薪资已超过{alumniPercentile}%的同校校友！母校为你骄傲！
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 text-sm">
+              <Users className="w-4 h-4 text-blue-500" />
+              <span>{ageData.title}</span>
             </div>
-            <div className="space-y-1 text-xs">
-              <div className="p-2 bg-yellow-50 rounded text-gray-700">
-                哦豁，你的直系学长平均薪资是¥18,500，差距看到了吗？
-              </div>
-              <div className="p-2 bg-red-50 rounded text-gray-700">
-                别划走！你的一位同班同学薪资比你高¥5,000 👀
-              </div>
+            <div className="flex items-center gap-2 text-sm">
+              <Building2 className="w-4 h-4 text-green-500" />
+              <span>{industryData.title}</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <Trophy className="w-4 h-4 text-purple-500" />
+              <span>已超过{alumniPercentile}%同校校友！</span>
             </div>
           </div>
         </Card>
 
-        {/* 5. Major Relevance */}
+        {/* Major & Complaints */}
         <Card className="p-4 bg-white">
-          <div className="text-center space-y-3">
-            <h2 className="text-base font-bold text-gray-800">
-              📍 你的工作对得起学费吗？
-            </h2>
-            <div className="text-2xl">{majorData.icon}</div>
-            <div className="text-sm text-gray-600">{majorData.title}</div>
+          <div className="text-center mb-3">
+            <div className="text-lg">{majorData.icon}</div>
+            <div className="text-sm font-medium">📍 你的工作对得起学费吗？</div>
+            <div className="text-xs text-gray-600 mt-1">{majorData.title}</div>
           </div>
-        </Card>
-
-        {/* 6. Major Complaints */}
-        <Card className="p-4 bg-white">
-          <div className="space-y-3">
-            <h2 className="text-base font-bold text-gray-800 text-center">
-              🚨 来！一起吐槽本专业的坑！
-            </h2>
+          
+          <div className="text-center">
+            <div className="text-sm font-medium mb-2">🚨 一起吐槽本专业！</div>
             <div className="grid grid-cols-2 gap-2">
-              {majorComplaints.map((complaint, index) => (
+              {majorComplaints.slice(0, 4).map((complaint, index) => (
                 <button
                   key={index}
-                  className="p-2 bg-gray-50 rounded text-xs hover:bg-gray-100 transition-colors"
+                  className="p-2 bg-gray-50 rounded text-xs hover:bg-gray-100"
                 >
-                  <div className="text-lg mb-1">{complaint.icon}</div>
-                  <div className="text-gray-700">{complaint.text}</div>
+                  <div className="text-sm">{complaint.icon}</div>
+                  <div className="text-gray-700 text-xs">{complaint.text}</div>
                   <div className="text-gray-500 text-xs">{complaint.count}人</div>
                 </button>
               ))}
             </div>
-            <div className="text-center text-sm text-gray-600 mt-2">
-              找到520位和你一样惨的战友！
+            <div className="text-xs text-gray-600 mt-2">
+              找到520位和你一样的战友！
             </div>
           </div>
         </Card>
 
-        {/* Navigation Buttons */}
-        <div className="flex flex-col space-y-2 mt-4">
+        {/* Action Buttons */}
+        <div className="flex gap-2">
           <Button 
-            onClick={() => navigate("/polls")} 
-            className="w-full"
+            onClick={handleShare}
+            variant="outline"
+            className="flex-1"
           >
-            📊 查看更多调查
+            <Share2 className="w-4 h-4 mr-1" />
+            分享排名
           </Button>
           
           <Button 
-            onClick={() => navigate("/results-demo")} 
-            variant="outline"
-            className="w-full"
+            onClick={() => navigate("/polls")} 
+            className="flex-1"
           >
-            📈 查看详细分析
+            📊 更多调查
           </Button>
         </div>
       </div>

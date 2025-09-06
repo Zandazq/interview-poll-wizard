@@ -127,14 +127,87 @@ const SalaryRankingPage = () => {
           </div>
         </Card>
 
-        {/* Major & Complaints */}
+        {/* Major Relevance Module */}
         <Card className="p-4 bg-white">
-          <div className="text-center mb-3">
-            <div className="text-lg">{majorData.icon}</div>
-            <div className="text-sm font-medium">📍 你的工作对得起学费吗？</div>
-            <div className="text-xs text-gray-600 mt-1">{majorData.title}</div>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <span className="text-lg">📍</span>
+              <span className="text-sm font-medium">你的工作对得起学费吗？</span>
+            </div>
+            <button className="px-3 py-1 bg-orange-100 text-orange-600 text-xs rounded-full">
+              示例数据
+            </button>
           </div>
           
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-700">完全对口</span>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600">142 票</span>
+                <span className="text-sm font-medium text-green-600">35%</span>
+              </div>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2">
+              <div className="bg-green-500 h-2 rounded-full" style={{ width: "35%" }}></div>
+            </div>
+            
+            <div className="border-2 border-green-400 rounded-lg p-3 bg-green-50">
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-gray-700">基本对口</span>
+                  <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">您的选择</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-gray-600">98 票</span>
+                  <span className="text-sm font-medium text-green-600">24%</span>
+                </div>
+              </div>
+              <div className="w-full bg-gray-100 rounded-full h-2">
+                <div className="bg-green-500 h-2 rounded-full" style={{ width: "24%" }}></div>
+              </div>
+            </div>
+            
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-700">部分对口</span>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600">76 票</span>
+                <span className="text-sm font-medium text-green-600">19%</span>
+              </div>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2">
+              <div className="bg-green-500 h-2 rounded-full" style={{ width: "19%" }}></div>
+            </div>
+            
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-700">不太对口</span>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600">54 票</span>
+                <span className="text-sm font-medium text-green-600">13%</span>
+              </div>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2">
+              <div className="bg-green-500 h-2 rounded-full" style={{ width: "13%" }}></div>
+            </div>
+            
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-700">完全不对口</span>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600">36 票</span>
+                <span className="text-sm font-medium text-green-600">9%</span>
+              </div>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2">
+              <div className="bg-green-500 h-2 rounded-full" style={{ width: "9%" }}></div>
+            </div>
+          </div>
+          
+          <div className="mt-4 text-center">
+            <div className="text-xs text-gray-600">{majorData.title}</div>
+          </div>
+        </Card>
+
+        {/* Major Complaints */}
+        <Card className="p-4 bg-white">
           <div className="text-center">
             <div className="text-sm font-medium mb-2">🚨 一起吐槽本专业！</div>
             <div className="grid grid-cols-2 gap-2">

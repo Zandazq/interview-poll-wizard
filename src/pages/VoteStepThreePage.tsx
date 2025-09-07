@@ -24,7 +24,6 @@ const VoteStepThreePage: React.FC = () => {
     education: "",
     overtime: "",
     position: "",
-    skillSelfAssessment: "",
   });
 
   const handleChange = (field: string, value: string) => {
@@ -333,24 +332,6 @@ const VoteStepThreePage: React.FC = () => {
             </div>
           </div>
 
-          {/* 一句话吐槽本岗位 */}
-          <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">一句话吐槽本岗位（可选）</h3>
-            <div className="space-y-2">
-              <Textarea
-                id="skillSelfAssessment"
-                placeholder="请吐槽您岗位的硬伤..."
-                value={formData.skillSelfAssessment}
-                onChange={(e) => handleChange("skillSelfAssessment", e.target.value)}
-                className="wechat-input resize-none"
-                maxLength={50}
-                rows={3}
-              />
-              <div className="text-right text-xs text-wechat-mediumGray">
-                {formData.skillSelfAssessment.length}/50字
-              </div>
-            </div>
-          </div>
           
           <Button
             type="submit"

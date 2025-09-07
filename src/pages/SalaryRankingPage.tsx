@@ -28,9 +28,27 @@ const SalaryRankingPage = () => {
   };
 
   const getAgeMessage = (percentile: number) => {
-    if (percentile >= 80) return { title: "97年的你，活成了95后羡慕的样子！", icon: "👑" };
-    if (percentile >= 40) return { title: "和大多数'XX后'一样，在努力搞钱的路上狂奔！", icon: "🏃‍♂️" };
-    return { title: "别慌！你的同龄人可能只是比你多打了几年工👀", icon: "😅" };
+    const ageGroup = "25-30岁"; // Can be dynamic based on user age
+    if (percentile >= 80) return { 
+      title: `您的年收入超过了${ageGroup}年龄段中${percentile}%的人！`, 
+      subtitle: "97年的你，活成了95后羡慕的样子！",
+      icon: "👑" 
+    };
+    if (percentile >= 60) return { 
+      title: `您的年收入超过了${ageGroup}年龄段中${percentile}%的人`, 
+      subtitle: "和大多数同龄人相比，你已经跑在前面了！",
+      icon: "🏃‍♂️" 
+    };
+    if (percentile >= 40) return { 
+      title: `您的年收入超过了${ageGroup}年龄段中${percentile}%的人`, 
+      subtitle: "和大多数'XX后'一样，在努力搞钱的路上狂奔！",
+      icon: "🏃‍♂️" 
+    };
+    return { 
+      title: `您的年收入超过了${ageGroup}年龄段中${percentile}%的人`, 
+      subtitle: "别慌！你的同龄人可能只是比你多打了几年工👀",
+      icon: "😅" 
+    };
   };
 
   const getIndustryMessage = (percentile: number) => {
@@ -85,7 +103,8 @@ const SalaryRankingPage = () => {
           <Card className="p-3 text-center bg-white">
             <div className="text-lg">{ageData.icon}</div>
             <div className="text-xs text-gray-600 mb-1">同龄PK</div>
-            <div className="text-sm font-bold text-blue-600">{agePercentile}%</div>
+            <div className="text-sm font-bold text-blue-600">超越{agePercentile}%</div>
+            <div className="text-xs text-gray-500 mt-1">25-30岁</div>
           </Card>
           
           <Card className="p-3 text-center bg-white">
@@ -104,9 +123,12 @@ const SalaryRankingPage = () => {
         {/* Insights */}
         <Card className="p-4 bg-white">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-sm">
-              <Users className="w-4 h-4 text-blue-500" />
-              <span>{ageData.title}</span>
+            <div className="space-y-1">
+              <div className="flex items-center gap-2 text-sm">
+                <Users className="w-4 h-4 text-blue-500" />
+                <span className="font-medium text-blue-700">{ageData.title}</span>
+              </div>
+              <div className="text-xs text-gray-600 ml-6">{ageData.subtitle}</div>
             </div>
             <div className="flex items-center gap-2 text-sm">
               <Building2 className="w-4 h-4 text-green-500" />

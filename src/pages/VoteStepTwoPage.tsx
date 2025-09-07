@@ -44,7 +44,6 @@ const VoteStepTwoPage: React.FC = () => {
     school: "",
     major: "",
     majorGrade: [5],
-    skillComparison: "",
   });
 
   const handleChange = (field: string, value: string) => {
@@ -267,24 +266,6 @@ const VoteStepTwoPage: React.FC = () => {
             </div>
           </div>
 
-          {/* 一句话比拟本专业状况 */}
-          <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">一句话吐槽本专业硬伤（可选）</h3>
-            <div className="space-y-2">
-              <Textarea
-                id="skillComparison"
-                placeholder="请吐槽您专业的硬伤..."
-                value={formData.skillComparison}
-                onChange={(e) => handleChange("skillComparison", e.target.value)}
-                className="wechat-input resize-none"
-                maxLength={50}
-                rows={3}
-              />
-              <div className="text-right text-xs text-wechat-mediumGray">
-                {formData.skillComparison.length}/50字
-              </div>
-            </div>
-          </div>
 
           
           <Button

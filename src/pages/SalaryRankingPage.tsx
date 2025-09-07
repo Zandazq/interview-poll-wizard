@@ -297,27 +297,6 @@ const SalaryRankingPage = () => {
           </div>
         </Card>
 
-        {/* Major Complaints */}
-        <Card className="p-4 bg-white">
-          <div className="text-center">
-            <div className="text-sm font-medium mb-2">🚨 一起吐槽本专业！</div>
-            <div className="grid grid-cols-2 gap-2">
-              {majorComplaints.slice(0, 4).map((complaint, index) => (
-                <button
-                  key={index}
-                  className="p-2 bg-gray-50 rounded text-xs hover:bg-gray-100"
-                >
-                  <div className="text-sm">{complaint.icon}</div>
-                  <div className="text-gray-700 text-xs">{complaint.text}</div>
-                  <div className="text-gray-500 text-xs">{complaint.count}人</div>
-                </button>
-              ))}
-            </div>
-            <div className="text-xs text-gray-600 mt-2">
-              找到520位和你一样的战友！
-            </div>
-          </div>
-        </Card>
 
         {/* Action Buttons */}
         <div className="flex gap-2">

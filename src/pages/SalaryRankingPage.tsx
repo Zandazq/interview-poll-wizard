@@ -18,7 +18,6 @@ const SalaryRankingPage = () => {
   const [userSchool] = useState("清华大学");
   const [userMajor] = useState("计算机科学");
   const [isRelevant] = useState(true);
-  const [selectedComplaint] = useState("");
   
   // Messages for different sections
   const getOverallMessage = (percentile: number) => {
@@ -45,13 +44,6 @@ const SalaryRankingPage = () => {
       ? { title: "学以致用，这学费交得值！", icon: "🎯" }
       : { title: "哈哈哈，又是一个'误入歧途'的小可爱！你的专业是毕业即考古吗？", icon: "🤷‍♂️" };
   };
-
-  const majorComplaints = [
-    { text: "天坑专业，快跑！", icon: "💨", count: 520 },
-    { text: "表面光鲜，实则搬砖", icon: "🧱", count: 342 },
-    { text: "全靠爱发电", icon: "🔋", count: 287 },
-    { text: "越老越吃香（香不香我不知道）", icon: "👴", count: 156 }
-  ];
 
   const handleShare = () => {
     const text = `我的薪资打败了全国${userPercentile}%的求职者！🚀\n查看你的薪资排名 👇`;

@@ -31,7 +31,7 @@ const SalaryRankingPage = () => {
     const ageGroup = "25-30岁"; // Can be dynamic based on user age
     if (percentile >= 80) return { 
       title: `您的年收入超过了${ageGroup}年龄段中${percentile}%的人！`, 
-      subtitle: "97年的你，活成了95后羡慕的样子！",
+      subtitle: "同龄人中的佼佼者，表现优秀！",
       icon: "👑" 
     };
     if (percentile >= 60) return { 

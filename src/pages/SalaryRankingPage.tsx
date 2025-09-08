@@ -28,7 +28,7 @@ const SalaryRankingPage = () => {
   };
 
   const getAgeMessage = (percentile: number) => {
-    const ageGroup = "25-30岁"; // Can be dynamic based on user age
+    const ageGroup = "20-30岁"; // Can be dynamic based on user age
     if (percentile >= 80) return { 
       title: `您的年收入超过了${ageGroup}年龄段中${percentile}%的人！`, 
       subtitle: "",
@@ -102,9 +102,8 @@ const SalaryRankingPage = () => {
         <div className="grid grid-cols-3 gap-2">
           <Card className="p-3 text-center bg-white">
             <div className="text-lg">{ageData.icon}</div>
-            <div className="text-xs text-gray-600 mb-1">同龄PK</div>
+            <div className="text-xs text-gray-600 mb-1">同龄排名(20-30岁)</div>
             <div className="text-sm font-bold text-blue-600">超越{agePercentile}%</div>
-            <div className="text-xs text-gray-500 mt-1">25-30岁</div>
           </Card>
           
           <Card className="p-3 text-center bg-white">

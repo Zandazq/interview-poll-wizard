@@ -101,19 +101,16 @@ const SalaryRankingPage = () => {
         {/* Quick Stats Grid */}
         <div className="grid grid-cols-3 gap-2">
           <Card className="p-3 text-center bg-white">
-            <div className="text-lg">{ageData.icon}</div>
             <div className="text-xs text-gray-600 mb-1">同龄排名(20-30岁)</div>
             <div className="text-sm font-bold text-blue-600">超越{agePercentile}%</div>
           </Card>
           
           <Card className="p-3 text-center bg-white">
-            <div className="text-lg">{industryData.icon}</div>
             <div className="text-xs text-gray-600 mb-1">行业排名（电子/电气/通信）</div>
             <div className="text-sm font-bold text-green-600">{industryPercentile}%</div>
           </Card>
           
           <Card className="p-3 text-center bg-white">
-            <div className="text-lg">🎓</div>
             <div className="text-xs text-gray-600 mb-1">校友圈</div>
             <div className="text-sm font-bold text-purple-600">{alumniPercentile}%</div>
           </Card>

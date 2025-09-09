@@ -98,22 +98,58 @@ const SalaryRankingPage = () => {
           <div className="bg-gray-50 rounded p-2 text-sm">{overallData.title}</div>
         </Card>
 
-        {/* Quick Stats Grid */}
-        <div className="grid grid-cols-3 gap-2">
-          <Card className="p-3 text-center bg-white">
-            <div className="text-sm font-bold text-blue-600">薪资超越20-30岁年龄段中{agePercentile}%的人</div>
-          </Card>
+        {/* Age Ranking Card */}
+        <Card className="p-3 text-center bg-white">
+          <div className="text-sm font-bold text-blue-600">薪资超越20-30岁年龄段中{agePercentile}%的人</div>
+        </Card>
+
+        {/* Industry Ranking Card */}
+        <Card className="p-6 text-center bg-white">
+          <div className="text-lg font-medium text-gray-800 mb-4">行业排名（{userIndustry}）</div>
+          <div className="text-5xl font-bold text-blue-500 mb-4">{industryPercentile}%</div>
           
-          <Card className="p-3 text-center bg-white">
-            <div className="text-xs text-gray-600 mb-1">行业排名（电子/电气/通信）</div>
-            <div className="text-sm font-bold text-green-600">{industryPercentile}%</div>
-          </Card>
+          {/* Progress Bar */}
+          <div className="relative w-full bg-gray-200 rounded-full h-2 mb-4">
+            <div 
+              className="absolute top-0 left-0 h-2 rounded-full bg-gradient-to-r from-blue-400 to-green-400" 
+              style={{ width: `${industryPercentile}%` }}
+            ></div>
+          </div>
           
-          <Card className="p-3 text-center bg-white">
-            <div className="text-xs text-gray-600 mb-1">校友圈</div>
-            <div className="text-sm font-bold text-purple-600">{alumniPercentile}%</div>
-          </Card>
-        </div>
+          {/* Progress Labels */}
+          <div className="flex justify-between text-xs text-gray-500 mb-4">
+            <span>0%</span>
+            <span>100%</span>
+          </div>
+          
+          <div className="text-sm text-green-600 font-medium">
+            您超过了{industryPercentile}%的同行业从业者 💼
+          </div>
+        </Card>
+
+        {/* Alumni Circle Card */}
+        <Card className="p-6 text-center bg-white">
+          <div className="text-lg font-medium text-gray-800 mb-4">校友圈（{userSchool}）</div>
+          <div className="text-5xl font-bold text-purple-500 mb-4">{alumniPercentile}%</div>
+          
+          {/* Progress Bar */}
+          <div className="relative w-full bg-gray-200 rounded-full h-2 mb-4">
+            <div 
+              className="absolute top-0 left-0 h-2 rounded-full bg-purple-500" 
+              style={{ width: `${alumniPercentile}%` }}
+            ></div>
+          </div>
+          
+          {/* Progress Labels */}
+          <div className="flex justify-between text-xs text-gray-500 mb-4">
+            <span>0%</span>
+            <span>100%</span>
+          </div>
+          
+          <div className="text-sm text-green-600 font-medium">
+            您领先于{alumniPercentile}%的同校校友 🎓
+          </div>
+        </Card>
 
         {/* Insights */}
         <Card className="p-4 bg-white">

@@ -101,7 +101,6 @@ const SalaryRankingPage = () => {
         {/* Quick Stats Grid */}
         <div className="grid grid-cols-3 gap-2">
           <Card className="p-3 text-center bg-white">
-            <div className="text-xs text-gray-600 mb-1">同龄排名(20-30岁)</div>
             <div className="text-sm font-bold text-blue-600">薪资超越20-30岁年龄段中{agePercentile}%的人</div>
           </Card>
           

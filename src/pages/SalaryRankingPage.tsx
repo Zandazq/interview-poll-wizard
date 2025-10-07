@@ -101,8 +101,8 @@ const SalaryRankingPage = () => {
         {/* Age Ranking Card */}
         <Card className="p-6 bg-white">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-medium text-gray-800">薪资超越20-30岁年龄段中{agePercentile}%的人</h3>
-            <div className="text-5xl font-bold text-green-600">{agePercentile}%</div>
+            <h3 className="text-base font-medium text-gray-800">薪资超越20-30岁年龄段中{agePercentile}%的人</h3>
+            <div className="text-3xl font-bold text-green-600">{agePercentile}%</div>
           </div>
           
           {/* Progress Bar */}
@@ -127,8 +127,8 @@ const SalaryRankingPage = () => {
         {/* Industry Ranking Card */}
         <Card className="p-6 bg-white">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-medium text-gray-800">行业排名（{userIndustry}）</h3>
-            <div className="text-5xl font-bold text-green-600">{industryPercentile}%</div>
+            <h3 className="text-base font-medium text-gray-800">行业排名（{userIndustry}）</h3>
+            <div className="text-3xl font-bold text-green-600">{industryPercentile}%</div>
           </div>
           
           {/* Progress Bar */}
@@ -153,8 +153,8 @@ const SalaryRankingPage = () => {
         {/* Alumni Circle Card */}
         <Card className="p-6 bg-white">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-medium text-gray-800">校友圈（{userSchool}）</h3>
-            <div className="text-5xl font-bold text-green-600">{alumniPercentile}%</div>
+            <h3 className="text-base font-medium text-gray-800">校友圈（{userSchool}）</h3>
+            <div className="text-3xl font-bold text-green-600">{alumniPercentile}%</div>
           </div>
           
           {/* Progress Bar */}

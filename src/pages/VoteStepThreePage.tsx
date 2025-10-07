@@ -59,13 +59,10 @@ const VoteStepThreePage: React.FC = () => {
           {/* 当前所在年收入 */}
           <div className="bg-white rounded-lg p-4">
             <Label htmlFor="annualPackage" className="text-wechat-darkGray mb-2 block">
-              💰 您的年薪总包（单位：万元）
+              💰 您的税前年收入总额（单位：万元）
             </Label>
             
             <div className="mb-4 text-sm text-wechat-mediumGray bg-gray-50 rounded-lg p-3">
-              <div className="mb-2">
-                <strong>▸ 含税年薪 = 月薪×12 + 年终奖 + 补贴</strong>
-              </div>
               <div className="mb-2">▸ 销售岗：底薪+提成年度总值</div>
               <div className="mb-3">▸ 股票/期权：按当前市场价值估算</div>
               

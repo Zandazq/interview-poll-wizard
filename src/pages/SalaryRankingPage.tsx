@@ -158,26 +158,6 @@ const SalaryRankingPage = () => {
           </div>
         </Card>
 
-        {/* Insights */}
-        <Card className="p-4 bg-white">
-          <div className="space-y-2">
-            <div className="space-y-1">
-              <div className="flex items-center gap-2 text-sm">
-                <Users className="w-4 h-4 text-blue-500" />
-                <span className="font-medium text-blue-700">{ageData.title}</span>
-              </div>
-              <div className="text-xs text-gray-600 ml-6">{ageData.subtitle}</div>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <Building2 className="w-4 h-4 text-green-500" />
-              <span>{industryData.title}</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <Trophy className="w-4 h-4 text-purple-500" />
-              <span>已超过{alumniPercentile}%同校校友！</span>
-            </div>
-          </div>
-        </Card>
 
         {/* Major Relevance Module */}
         <Card className="p-4 bg-white">

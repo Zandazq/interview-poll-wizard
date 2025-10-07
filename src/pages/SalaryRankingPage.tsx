@@ -90,88 +90,70 @@ const SalaryRankingPage = () => {
       
       <div className="p-4 space-y-3">
         {/* Main Result Card */}
-        <Card className="p-4 bg-white text-center">
-          <div className="text-3xl mb-2">{overallData.icon}</div>
-          <h1 className="text-lg font-bold mb-2">🤑 你的薪资打败了全国多少对手？</h1>
-          <div className="text-2xl font-bold text-primary mb-1">{userPercentile}%</div>
-          <div className="text-sm text-gray-600 mb-2">你的薪资: ¥{userSalary.toLocaleString()}</div>
-          <div className="bg-gray-50 rounded p-2 text-sm">{overallData.title}</div>
+        <Card className="p-8 bg-gradient-to-br from-green-50 to-white border-2 border-green-200 text-center shadow-lg">
+          <div className="text-4xl mb-3">{overallData.icon}</div>
+          <h1 className="text-xl font-bold mb-4 text-gray-800">🤑 你的薪资打败了全国多少对手？</h1>
+          <div className="text-6xl font-bold text-green-600 mb-3">{userPercentile}%</div>
+          <div className="text-base text-gray-700 mb-4">你的薪资: ¥{userSalary.toLocaleString()}</div>
+          <div className="bg-white/80 rounded-lg p-3 text-base font-medium text-gray-700">{overallData.title}</div>
         </Card>
 
         {/* Age Ranking Card */}
-        <Card className="p-6 bg-white">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-base font-medium text-gray-800">薪资超越20-30岁年龄段中{agePercentile}%的人</h3>
-            <div className="text-3xl font-bold text-green-600">{agePercentile}%</div>
+        <Card className="p-4 bg-white">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-sm font-medium text-gray-700">薪资超越20-30岁年龄段中{agePercentile}%的人</h3>
+            <div className="text-2xl font-bold text-green-600">{agePercentile}%</div>
           </div>
           
           {/* Progress Bar */}
-          <div className="relative w-full bg-gray-200 rounded-full h-2 mb-4">
+          <div className="relative w-full bg-gray-200 rounded-full h-2 mb-2">
             <div 
               className="absolute top-0 left-0 h-2 rounded-full bg-green-500" 
               style={{ width: `${agePercentile}%` }}
             ></div>
           </div>
           
-          {/* Progress Labels */}
-          <div className="flex justify-between text-xs text-gray-500 mb-4">
-            <span>0%</span>
-            <span>100%</span>
-          </div>
-          
-          <div className="text-sm text-gray-700">
+          <div className="text-xs text-gray-600">
             您的年收入超过了同龄段{agePercentile}%的人
           </div>
         </Card>
 
         {/* Industry Ranking Card */}
-        <Card className="p-6 bg-white">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-base font-medium text-gray-800">行业排名（{userIndustry}）</h3>
-            <div className="text-3xl font-bold text-green-600">{industryPercentile}%</div>
+        <Card className="p-4 bg-white">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-sm font-medium text-gray-700">行业排名（{userIndustry}）</h3>
+            <div className="text-2xl font-bold text-green-600">{industryPercentile}%</div>
           </div>
           
           {/* Progress Bar */}
-          <div className="relative w-full bg-gray-200 rounded-full h-2 mb-4">
+          <div className="relative w-full bg-gray-200 rounded-full h-2 mb-2">
             <div 
               className="absolute top-0 left-0 h-2 rounded-full bg-green-500" 
               style={{ width: `${industryPercentile}%` }}
             ></div>
           </div>
           
-          {/* Progress Labels */}
-          <div className="flex justify-between text-xs text-gray-500 mb-4">
-            <span>0%</span>
-            <span>100%</span>
-          </div>
-          
-          <div className="text-sm text-gray-700">
+          <div className="text-xs text-gray-600">
             您超过了{industryPercentile}%的同行业从业者
           </div>
         </Card>
 
         {/* Alumni Circle Card */}
-        <Card className="p-6 bg-white">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-base font-medium text-gray-800">校友圈（{userSchool}）</h3>
-            <div className="text-3xl font-bold text-green-600">{alumniPercentile}%</div>
+        <Card className="p-4 bg-white">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-sm font-medium text-gray-700">校友圈（{userSchool}）</h3>
+            <div className="text-2xl font-bold text-green-600">{alumniPercentile}%</div>
           </div>
           
           {/* Progress Bar */}
-          <div className="relative w-full bg-gray-200 rounded-full h-2 mb-4">
+          <div className="relative w-full bg-gray-200 rounded-full h-2 mb-2">
             <div 
               className="absolute top-0 left-0 h-2 rounded-full bg-green-500" 
               style={{ width: `${alumniPercentile}%` }}
             ></div>
           </div>
           
-          {/* Progress Labels */}
-          <div className="flex justify-between text-xs text-gray-500 mb-4">
-            <span>0%</span>
-            <span>100%</span>
-          </div>
-          
-          <div className="text-sm text-gray-700">
+          <div className="text-xs text-gray-600">
             您领先于{alumniPercentile}%的同校校友
           </div>
         </Card>

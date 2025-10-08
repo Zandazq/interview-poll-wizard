@@ -4,6 +4,7 @@ import Header from "@/components/Layout/Header";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
 import { Check, MapPin, Search } from "lucide-react";
 
 const JobInfoPage: React.FC = () => {
@@ -36,11 +37,18 @@ const JobInfoPage: React.FC = () => {
       <div className="p-4">
         <div className="mb-6">
           <h2 className="text-lg font-medium text-wechat-darkGray mb-2">
-            基本信息收集
+            测一测，你超越了身边多少同龄人？
           </h2>
-          <p className="text-sm text-wechat-mediumGray">
-            请填写您的求职相关信息
+          <p className="text-sm text-wechat-mediumGray mb-4">
+            2步快速测评，生成你的专属竞争力报告
           </p>
+          <div className="space-y-2">
+            <div className="flex items-center justify-between text-xs text-wechat-mediumGray">
+              <span>步骤 1/2</span>
+              <span>50%</span>
+            </div>
+            <Progress value={50} className="h-2" />
+          </div>
         </div>
         
         <form onSubmit={handleSubmit} className="space-y-6">

@@ -36,18 +36,18 @@ const JobInfoPage: React.FC = () => {
       
       <div className="p-4">
         <div className="mb-6">
-          <h2 className="text-lg font-medium text-wechat-darkGray mb-2">
-            测一测，你超越了身边多少同龄人？
+          <h2 className="text-2xl font-bold text-center mb-3 animate-fade-in bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight py-1">
+            🎯 测一测，你超越了身边多少同龄人？
           </h2>
-          <p className="text-sm text-wechat-mediumGray mb-4">
-            2步快速测评，生成你的专属竞争力报告
+          <p className="text-base text-center text-wechat-darkGray mb-4 font-medium">
+            2步快速测评，生成你的专属竞争力报告 ✨
           </p>
-          <div className="space-y-2">
-            <div className="flex items-center justify-between text-xs text-wechat-mediumGray">
+          <div className="space-y-2 bg-white rounded-lg p-4">
+            <div className="flex items-center justify-between text-sm text-wechat-mediumGray font-medium">
               <span>步骤 1/2</span>
               <span>50%</span>
             </div>
-            <Progress value={50} className="h-2" />
+            <Progress value={50} className="h-2.5" />
           </div>
         </div>
         

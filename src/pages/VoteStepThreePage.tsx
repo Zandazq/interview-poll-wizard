@@ -198,7 +198,7 @@ const VoteStepThreePage: React.FC = () => {
             type="submit"
             className="wechat-btn-primary w-full mt-6"
           >
-            完成投票
+            生成我的竞争力
           </Button>
         </form>
       </div>

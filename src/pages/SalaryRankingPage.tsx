@@ -330,24 +330,14 @@ const SalaryRankingPage = () => {
         </Card>
 
 
-        {/* Action Buttons */}
-        <div className="flex gap-2">
-          <Button 
-            onClick={handleShare}
-            variant="outline"
-            className="flex-1"
-          >
-            <Share2 className="w-4 h-4 mr-1" />
-            分享排名
-          </Button>
-          
-          <Button 
-            onClick={() => navigate("/polls")} 
-            className="flex-1"
-          >
-            📊 更多调查
-          </Button>
-        </div>
+        {/* Action Button */}
+        <Button 
+          onClick={handleShare}
+          className="w-full"
+        >
+          <Share2 className="w-4 h-4 mr-1" />
+          分享排名
+        </Button>
       </div>
     </div>
   );

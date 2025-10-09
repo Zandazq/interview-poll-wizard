@@ -166,9 +166,9 @@ const VoteStepThreePage: React.FC = () => {
             </Select>
           </div>
 
-          {/* 后悔吗 */}
+          {/* 如果时光倒流，你还会走上今天的岗位吗？ */}
           <div className="bg-white rounded-lg p-4">
-            <h3 className="text-base font-medium mb-4">后悔吗</h3>
+            <h3 className="text-base font-medium mb-4">如果时光倒流，你还会走上今天的岗位吗？</h3>
             <div className="space-y-3">
               {["后悔", "不后悔"].map((option) => (
                 <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("position", option)}>

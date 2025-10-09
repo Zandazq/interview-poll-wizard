@@ -152,6 +152,11 @@ const VoteStepThreePage: React.FC = () => {
             <Label htmlFor="education" className="text-wechat-darkGray mb-2 block">
               学历 (下拉选择)
             </Label>
+            
+            <div className="mb-4 text-sm text-wechat-mediumGray bg-gray-50 rounded-lg p-3">
+              <div className="font-medium text-wechat-darkGray">💡 你的薪资，在同学历中排第几？</div>
+            </div>
+            
             <Select value={formData.education} onValueChange={(value) => handleChange("education", value)}>
               <SelectTrigger className="wechat-input">
                 <SelectValue placeholder="请选择学历" />

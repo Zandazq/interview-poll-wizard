@@ -157,6 +157,12 @@ const VoteStepTwoPage: React.FC = () => {
               <Label htmlFor="graduationTime" className="text-wechat-darkGray mb-2 block">
                 毕业时间
               </Label>
+              
+              <div className="mb-4 text-sm text-wechat-mediumGray bg-gray-50 rounded-lg p-3">
+                <div className="mb-2">你被同届同学甩开了多远？</div>
+                <div className="font-medium text-wechat-darkGray">💡 解锁秘籍：填写毕业时间查看同届同学发展情况</div>
+              </div>
+              
               <Input
                 id="graduationTime"
                 placeholder="请输入毕业时间"

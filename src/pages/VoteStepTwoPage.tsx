@@ -7,8 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Check, Info } from "lucide-react";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Check } from "lucide-react";
 
 const VoteStepTwoPage: React.FC = () => {
   const navigate = useNavigate();
@@ -155,24 +154,9 @@ const VoteStepTwoPage: React.FC = () => {
             </div>
 
             <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Label htmlFor="graduationTime" className="text-wechat-darkGray">
-                  毕业时间
-                </Label>
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Info className="w-4 h-4 text-primary cursor-help" />
-                    </TooltipTrigger>
-                    <TooltipContent className="max-w-xs">
-                      <div className="space-y-1">
-                        <div className="font-medium">你被同届同学甩开了多远?</div>
-                        <div className="text-xs">💡 解锁秘籍：填写毕业时间查看同届同学发展情况</div>
-                      </div>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </div>
+              <Label htmlFor="graduationTime" className="text-wechat-darkGray mb-2 block">
+                毕业时间
+              </Label>
               <Input
                 id="graduationTime"
                 placeholder="请输入毕业时间"

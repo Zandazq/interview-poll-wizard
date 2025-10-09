@@ -170,15 +170,15 @@ const VoteStepThreePage: React.FC = () => {
           <div className="bg-white rounded-lg p-4">
             <h3 className="text-base font-medium mb-4">如果时光倒流，你还会走上今天的岗位吗？</h3>
             <div className="space-y-3">
-              {["后悔", "不后悔"].map((option) => (
+              {["会避开", "不后悔"].map((option) => (
                 <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("position", option)}>
                   <div className="flex justify-between w-full">
                     <div className="flex flex-col">
                       <Label className="text-wechat-darkGray cursor-pointer">
                         {option}
                       </Label>
-                      {option === "后悔" && (
-                        <span className="text-xs text-wechat-mediumGray mt-1">每天麻木搬砖</span>
+                      {option === "会避开" && (
+                        <span className="text-xs text-wechat-mediumGray mt-1">现在的路，并不是我想要的</span>
                       )}
                       {option === "不后悔" && (
                         <span className="text-xs text-wechat-mediumGray mt-1">庆幸入对行</span>

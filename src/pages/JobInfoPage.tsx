@@ -30,7 +30,7 @@ const JobInfoPage: React.FC = () => {
   return (
     <div className="wechat-container bg-[#F6F6F6]">
       <Header 
-        title="求职信息" 
+        title="" 
         showBack={true}
       />
       

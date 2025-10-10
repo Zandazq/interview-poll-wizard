@@ -70,7 +70,7 @@ const VoteStepTwoPage: React.FC = () => {
       <div className="p-4">
         <div className="mb-6">
           <h2 className="text-lg font-medium text-wechat-darkGray mb-2">
-            应届生-在校/失业
+            往届未就业/应届毕业生
           </h2>
           <p className="text-sm text-wechat-mediumGray">
             请填写您的基本信息

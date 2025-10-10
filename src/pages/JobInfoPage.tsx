@@ -69,7 +69,7 @@ const JobInfoPage: React.FC = () => {
             <div className="space-y-3">
               {[
                 "🎓应届生：萌新求带（刚出新手村）",
-                "💼社招：老司机求稳（职场求生中）"
+                "💼 在职：已有工作经验"
               ].map((option) => (
                 <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("role", option)}>
                   <div className="flex justify-between w-full">

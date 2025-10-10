@@ -134,7 +134,7 @@ const JobInfoPage: React.FC = () => {
             type="submit"
             className="wechat-btn-primary w-full mt-6"
           >
-            确认提交
+            进入投票
           </Button>
         </form>
       </div>

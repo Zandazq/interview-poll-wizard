@@ -130,7 +130,7 @@ const VoteStepThreePage: React.FC = () => {
               </Label>
               
               <div className="mb-4 text-sm text-wechat-mediumGray bg-gray-50 rounded-lg p-3">
-                <div className="mb-2">填完秒看：你被同届同学甩开了多远？</div>
+                <div className="mb-2">填完秒看：毕业5年后的薪资差距</div>
                 <div className="mb-1">→ 同岗位5年薪资差距表</div>
                 <div>→ 同龄人晋升速度排行榜</div>
               </div>

@@ -12,7 +12,7 @@ const VoteStepThreePage: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     annualPackage: "",
-    monthlyInterviews: "🌄 0家：【还没出村】   \"战场在哪都不知道\"",
+    monthlyInterviews: "0家：【还没出村】   \"战场在哪都不知道\"",
     age: "",
     graduationTime: "",
     education: "",
@@ -81,14 +81,14 @@ const VoteStepThreePage: React.FC = () => {
             <h3 className="text-base font-medium mb-4">1个月平均投面试几家</h3>
             <div className="space-y-3">
               {[
-                "🌄 0家：【还没出村】   \"战场在哪都不知道\"",
-                "💀 1-5家：【简历已凉】   \"HR已读不回是常态\"",
-                "😑 6-10家：【差点意思】   \"简历能看但不够亮眼\"",
-                "🆗 11-20家：【达标水平】   \"达到市场平均线的简历\"",
-                "✨ 21-30家：【有点优秀】   \"简历质量突出，超越多数人\"",
-                "🔥 31-40家：【相当出色】   \"简历让人眼前一亮，通过率很高\"",
-                "🤯 41-50家：【疯狂投递】   \"不是在面试，就是在投简历的路上\"",
-                "👽 50家以上：【非人类】   \"投递量突破天际，HR看到都怕\""
+                "0家：【还没出村】   \"战场在哪都不知道\"",
+                "1-5家：【简历已凉】   \"HR已读不回是常态\"",
+                "6-10家：【差点意思】   \"简历能看但不够亮眼\"",
+                "11-20家：【达标水平】   \"达到市场平均线的简历\"",
+                "21-30家：【有点优秀】   \"简历质量突出，超越多数人\"",
+                "31-40家：【相当出色】   \"简历让人眼前一亮，通过率很高\"",
+                "41-50家：【疯狂投递】   \"不是在面试，就是在投简历的路上\"",
+                "50家以上：【非人类】   \"投递量突破天际，HR看到都怕\""
               ].map((option) => (
                 <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("monthlyInterviews", option)}>
                   <div className="flex justify-between w-full">

@@ -12,7 +12,7 @@ const VoteStepThreePage: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     annualPackage: "",
-    monthlyInterviews: "1-5家：【简历已凉】   \"HR已读不回是常态\"",
+    monthlyInterviews: "0-5家：【简历已凉】   \"HR已读不回是常态\"",
     age: "",
     graduationTime: "",
     education: "",
@@ -81,7 +81,7 @@ const VoteStepThreePage: React.FC = () => {
             <h3 className="text-base font-medium mb-4">1个月平均投面试几家</h3>
             <div className="space-y-3">
               {[
-                "1-5家：【简历已凉】   \"HR已读不回是常态\"",
+                "0-5家：【简历已凉】   \"HR已读不回是常态\"",
                 "6-10家：【差点意思】   \"简历能看但不够亮眼\"",
                 "11-20家：【达标水平】   \"达到市场平均线的简历\"",
                 "21-30家：【有点优秀】   \"简历质量突出，超越多数人\"",

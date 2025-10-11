@@ -68,7 +68,7 @@ const JobInfoPage: React.FC = () => {
             <h3 className="text-base font-medium mb-4">你正在哪种生存模式？</h3>
             <div className="space-y-3">
               {[
-                "往届未就业/应届毕业生",
+                "无工作经验（往届未就业/应届毕业生）",
                 "有工作经验（在职/求职中）"
               ].map((option) => (
                 <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("role", option)}>

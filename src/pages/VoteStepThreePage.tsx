@@ -87,8 +87,7 @@ const VoteStepThreePage: React.FC = () => {
                 "11-20家：【达标水平】   \"达到市场平均线的简历\"",
                 "21-30家：【有点优秀】   \"简历质量突出，超越多数人\"",
                 "31-40家：【相当出色】   \"简历让人眼前一亮，通过率很高\"",
-                "41-50家：【疯狂投递】   \"不是在面试，就是在投简历的路上\"",
-                "50家以上：【非人类】   \"投递量突破天际，HR看到都怕\""
+                "41-50家：【疯狂投递】   \"不是在面试，就是在投简历的路上\""
               ].map((option) => (
                 <div key={option} className="wechat-radio-item rounded-lg" onClick={() => handleChange("monthlyInterviews", option)}>
                   <div className="flex justify-between w-full">
